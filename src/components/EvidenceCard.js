@@ -1,18 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 
 const {width, height} = Dimensions.get('screen');
-
+import Picker from '../components/Picker';
 const EvidenceCard = ({name, desc}) => {
+  //Evidence state
+  const [e1, setE1] = useState(0);
+  const [e2, setE2] = useState(0);
+  const [e3, setE3] = useState(0);
+  const [ghost, setGhost] = useState(0);
+
   return (
     <View style={styles.container}>
       <Image
         source={require('../../assets/images/oldPaper.jpg')}
         style={styles.imgBG}
       />
-      <Text style={styles.name}>{name}</Text>
-      <Text style={styles.commonText}>{desc}</Text>
+      <Text style={styles.commonText}>Evidence #1</Text>
+      <Picker type="evidence" evidence={e1} setEvidence={setE1} />
+      <Text style={styles.commonText}>Evidence #2</Text>
+      <Picker type="evidence" evidence={e2} setEvidence={setE2} />
+      <Text style={styles.commonText}>Evidence #3</Text>
+      <Picker type="evidence" evidence={e3} setEvidence={setE3} />
+      <Text style={styles.commonText}>
+        Using the evidence above, I have discovered that the Ghost type is:{' '}
+      </Text>
+      <Picker type="ghost" />
     </View>
   );
 };
