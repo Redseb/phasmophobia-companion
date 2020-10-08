@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -24,7 +24,7 @@ import EvidenceCard from './src/components/EvidenceCard';
 
 import BottomBar from './src/components/BottomBar';
 
-import Carousel from 'react-native-snap-carousel';
+import Carousel, {snapToItem} from 'react-native-snap-carousel';
 import cards from './src/cards';
 
 const {width, height} = Dimensions.get('screen');
@@ -55,22 +55,16 @@ const renderCard = ({item, index}) => {
 };
 
 const App = () => {
+  const carouselRef = useRef('carousel');
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <>
       <View style={styles.mainContainer}>
         <StatusBar barStyle="transparent" backgroundColor="black" />
-        {/* <GhostCard
-          name="Demon"
-          desc="A Demon is one of the worst Ghosts you can encounter. It has been known to attack without a reason."
-          strength="Demons will attack more often than any other Ghost."
-          weakness=" Asking a Demon successful questions on the Ouija Board won’t lower the users sanity."
-          evidence="Spirit Box, Ghost Writing and Freezing Temperatures"
-        /> */}
-        {/* <View style={styles.carouselContainer}> */}
         <Carousel
-          // ref={(c) => {
-          //   this._carousel = c;
-          // }}
+          initialNumToRender={cards.length}
+          ref={carouselRef}
           data={cards}
           renderItem={renderCard}
           sliderWidth={width}
@@ -78,10 +72,11 @@ const App = () => {
           layout={'default'}
           containerCustomStyle={styles.carouselContainer}
           contentContainerCustomStyle={{alignSelf: 'center'}}
+          onSnapToItem={() => {
+            setActiveIndex(carouselRef.current.currentIndex);
+          }}
         />
-        {/* </View> */}
-
-        <BottomBar />
+        <BottomBar activeIndex={activeIndex} carouselRef={carouselRef} />
       </View>
     </>
   );
