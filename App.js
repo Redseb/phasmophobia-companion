@@ -63,7 +63,7 @@ const App = () => {
       <View style={styles.mainContainer}>
         <StatusBar barStyle="transparent" backgroundColor="black" />
         <Carousel
-          // initialNumToRender={cards.length}
+          initialNumToRender={cards.length}
           ref={carouselRef}
           data={cards}
           renderItem={renderCard}
@@ -75,6 +75,7 @@ const App = () => {
           onSnapToItem={() => {
             setActiveIndex(carouselRef.current.currentIndex);
           }}
+          removeClippedSubviews={true}
         />
         <BottomBar activeIndex={activeIndex} carouselRef={carouselRef} />
       </View>

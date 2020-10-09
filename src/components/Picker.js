@@ -103,13 +103,13 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
           onPress={() => {
             setEvidence((evidence - 1) % evidenceList.length);
           }}>
-          <FontAwesome5 name="angle-left" size={width / 10} />
+          <FontAwesome5 name="angle-left" size={width / 8} />
         </TouchableOpacity>
         <Text style={styles.text}>{evidenceList[evidence]}</Text>
         <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
           <FontAwesome5
             name="angle-right"
-            size={width / 10}
+            size={width / 8}
             onPress={() => {
               setEvidence((evidence + 1) % evidenceList.length);
             }}
@@ -126,7 +126,6 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
           passes = false;
         }
       });
-      console.log(ghostName, passes);
       return passes;
     });
 
@@ -137,13 +136,13 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
           onPress={() => {
             setEvidence((evidence - 1) % ghostPickerList.length);
           }}>
-          <FontAwesome5 name="angle-left" size={width / 10} />
+          <FontAwesome5 name="angle-left" size={width / 8} />
         </TouchableOpacity>
         <Text style={styles.text}>{ghostPickerList[evidence]}</Text>
         <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
           <FontAwesome5
             name="angle-right"
-            size={width / 10}
+            size={width / 8}
             onPress={() => {
               setEvidence((evidence + 1) % ghostPickerList.length);
             }}
