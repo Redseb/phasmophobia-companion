@@ -63,7 +63,7 @@ const App = () => {
       <View style={styles.mainContainer}>
         <StatusBar barStyle="transparent" backgroundColor="black" />
         <Carousel
-          initialNumToRender={cards.length}
+          // initialNumToRender={cards.length}
           ref={carouselRef}
           data={cards}
           renderItem={renderCard}

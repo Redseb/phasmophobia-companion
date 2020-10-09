@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 
@@ -10,6 +10,11 @@ const EvidenceCard = ({name, desc}) => {
   const [e2, setE2] = useState(0);
   const [e3, setE3] = useState(0);
   const [ghost, setGhost] = useState(0);
+
+  //Whenever any evidence is updated, reset ghost
+  useEffect(() => {
+    setGhost(0);
+  }, [e1, e2, e3]);
 
   return (
     <View style={styles.container}>
@@ -26,7 +31,12 @@ const EvidenceCard = ({name, desc}) => {
       <Text style={styles.commonText}>
         Using the evidence above, I have discovered that the Ghost type is:{' '}
       </Text>
-      <Picker type="ghost" />
+      <Picker
+        type="ghost"
+        evidenceArr={[e1, e2, e3]}
+        evidence={ghost}
+        setEvidence={setGhost}
+      />
     </View>
   );
 };

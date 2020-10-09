@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -11,16 +11,17 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 const {width, height} = Dimensions.get('screen');
 
 const evidenceList = [
-  'No Evidence',
-  'Spirit Box',
-  'Freezing Temperatures',
-  'EMF Level 5',
-  'Ghost Writing',
-  'Ghost Orb',
-  'Fingerprints',
+  'No Evidence', //0
+  'Spirit Box', //1
+  'Freezing Temperatures', //2
+  'EMF Level 5', //3
+  'Ghost Writing', //4
+  'Ghost Orb', //5
+  'Fingerprints', //6
 ];
 
-const ghostList = [
+const ghostNames = [
+  'Not Yet Discoverd',
   'Spirit',
   'Wraith',
   'Phantom',
@@ -34,29 +35,123 @@ const ghostList = [
   'Yurei',
   'Oni',
 ];
+let ghostPickerList = ghostNames;
+// Ghost: name: <String>, evidence:[integer, integer, integer]
+// evidence number is the index in evidenceList
+const ghostList = [
+  {
+    name: 'Not Yet Discoverd',
+    evidence: [0, 0, 0],
+  },
+  {
+    name: 'Spirit',
+    evidence: [1, 6, 4],
+  },
+  {
+    name: 'Wraith',
+    evidence: [6, 2, 1],
+  },
+  {
+    name: 'Phantom',
+    evidence: [3, 5, 2],
+  },
+  {
+    name: 'Poltergeist',
+    evidence: [1, 6, 5],
+  },
+  {
+    name: 'Banshee',
+    evidence: [3, 6, 2],
+  },
+  {
+    name: 'Jinn',
+    evidence: [1, 5, 3],
+  },
+  {
+    name: 'Mare',
+    evidence: [1, 5, 2],
+  },
+  {
+    name: 'Revenant',
+    evidence: [3, 6, 4],
+  },
+  {
+    name: 'Shade',
+    evidence: [3, 5, 4],
+  },
+  {
+    name: 'Demon',
+    evidence: [1, 4, 2],
+  },
+  {
+    name: 'Yurei',
+    evidence: [5, 4, 2],
+  },
+  {
+    name: 'Oni',
+    evidence: [3, 1, 4],
+  },
+];
 
-const Picker = ({type, evidence, setEvidence}) => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={{width: width / 8, alignItems: 'flex-start'}}
-        onPress={() => {
-          setEvidence((evidence - 1) % evidenceList.length);
-        }}>
-        <FontAwesome5 name="angle-left" size={width / 10} />
-      </TouchableOpacity>
-      <Text style={styles.text}>{evidenceList[evidence]}</Text>
-      <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
-        <FontAwesome5
-          name="angle-right"
-          size={width / 10}
+//evidence and setEvidence are ghost and setGhost for type="ghost"
+const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
+  if (type == 'evidence') {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={{width: width / 8, alignItems: 'flex-start'}}
           onPress={() => {
-            setEvidence((evidence + 1) % evidenceList.length);
-          }}
-        />
-      </TouchableOpacity>
-    </View>
-  );
+            setEvidence((evidence - 1) % evidenceList.length);
+          }}>
+          <FontAwesome5 name="angle-left" size={width / 10} />
+        </TouchableOpacity>
+        <Text style={styles.text}>{evidenceList[evidence]}</Text>
+        <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
+          <FontAwesome5
+            name="angle-right"
+            size={width / 10}
+            onPress={() => {
+              setEvidence((evidence + 1) % evidenceList.length);
+            }}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  } else {
+    //Filter out the ghost list
+    ghostPickerList = ghostNames.filter((ghostName, index) => {
+      let passes = true;
+      evidenceArr.forEach((e) => {
+        if (e > 0 && !ghostList[index].evidence.includes(e) && index > 0) {
+          passes = false;
+        }
+      });
+      console.log(ghostName, passes);
+      return passes;
+    });
+
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={{width: width / 8, alignItems: 'flex-start'}}
+          onPress={() => {
+            setEvidence((evidence - 1) % ghostPickerList.length);
+          }}>
+          <FontAwesome5 name="angle-left" size={width / 10} />
+        </TouchableOpacity>
+        <Text style={styles.text}>{ghostPickerList[evidence]}</Text>
+        <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
+          <FontAwesome5
+            name="angle-right"
+            size={width / 10}
+            onPress={() => {
+              setEvidence((evidence + 1) % ghostPickerList.length);
+            }}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
