@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,6 +16,7 @@ import {
   StatusBar,
   Dimensions,
 } from 'react-native';
+import SplashScren from 'react-native-splash-screen';
 
 import IntroductionCard from './src/components/IntroductionCard';
 import GhostCard from './src/components/GhostCard';
@@ -55,6 +56,9 @@ const renderCard = ({item, index}) => {
 };
 
 const App = () => {
+  useEffect(() => {
+    SplashScren.hide();
+  }, []);
   const carouselRef = useRef('carousel');
   const [activeIndex, setActiveIndex] = useState(0);
 
