@@ -187,7 +187,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu',
   },
   evidenceRemainingContainer: {
-    height: height / 8,
+    height: height / 5,
+    display: 'flex',
+    justifyContent: 'space-around',
   },
   header: {
     alignSelf: 'center',
@@ -198,7 +200,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: 'center',
-    fontSize: height / 40,
+    fontSize: height / 50,
     textAlign: 'center',
     fontFamily: 'Ubuntu',
   },
