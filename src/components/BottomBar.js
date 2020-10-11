@@ -11,9 +11,9 @@ import {snapToItem} from 'react-native-snap-carousel';
 const {width, height} = Dimensions.get('screen');
 
 const INTRO_INDEX = 0;
-const GHOST_INDEX = 3;
-const TOOLS_INDEX = 15;
-const EVIDENCE_INDEX = 23;
+const GHOST_INDEX = 4;
+const TOOLS_INDEX = 16;
+const EVIDENCE_INDEX = 24;
 
 const BottomBar = ({carouselRef, activeIndex}) => {
   const [currSection, setCurrSection] = useState(0);

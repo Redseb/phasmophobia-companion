@@ -7,12 +7,17 @@ const cards = [
   {
     type: 'intro',
     name: 'Gathering Evidence',
-    desc: `Evidence of the supernatural is high in demand which means it can sell. Hunting Ghosts however is an extremely dangerous task.\n\n It will be your job to enter locations and gather as much evidence of the supernatural as possible, just remember, don't outstay your welcome.\n\n In order to discover what type of Ghost you are dealing with you will have to learn each Ghosts strengths and weaknesses.`,
+    desc: `Evidence of the supernatural is high in demand which means it can sell. Hunting Ghosts however is an extremely dangerous task.\n\n It will be your job to enter locations and gather as much evidence of the supernatural as possible, just remember, don't outstay your welcome.\n\n `,
+  },
+  {
+    type: 'intro',
+    name: 'Staying Alive',
+    desc: `In order to discover what type of Ghost you are dealing with you will have to learn each Ghosts strengths and weaknesses.\n\nThe digital clock in the truck shows you how long you have before the Ghost will get angry and lower your sanity faster, use this time to find the Ghost and setup equipment. If your sanity becomes too low the recommended action is to leave.`,
   },
   {
     type: 'intro',
     name: `A Hunter's Sanity`,
-    desc: `In your investigation into the supernatural you will need to make sure your Sanity is kept high. All types of Ghosts prey on our Sanity making them stronger the more insane we become.\n\n To Keep you sanity high around the paranormal make sure you stay in lit areas.\n\n The digital clock in the truck shows you how long you have before the Ghost will get angry and lower your sanity faster, use this time to find the Ghost and setup equipment. If your sanity becomes too low the recommended action is to leave.`,
+    desc: `In your investigation into the supernatural you will need to make sure your Sanity is kept high. All types of Ghosts prey on our Sanity making them stronger the more insane we become.\n\n To Keep you sanity high around the paranormal make sure you stay in lit areas.\n\n `,
   },
   {
     type: 'ghost',
