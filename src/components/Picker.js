@@ -12,12 +12,12 @@ const {width, height} = Dimensions.get('screen');
 
 const evidenceList = [
   'No Evidence', //0
-  'Spirit Box', //1
-  'Freezing Temperatures', //2
-  'EMF Level 5', //3
-  'Ghost Writing', //4
-  'Ghost Orb', //5
-  'Fingerprints', //6
+  'EMF Level 5',
+  'Spirit Box',
+  'Fingerprints',
+  'Ghost Orb',
+  'Ghost Writing',
+  'Freezing Temperatures',
 ];
 
 const ghostNames = [
@@ -101,7 +101,7 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
         <TouchableOpacity
           style={{width: width / 8, alignItems: 'flex-start'}}
           onPress={() => {
-            setEvidence((evidence - 1) % evidenceList.length);
+            setEvidence(evidence == 0 ? evidenceList.length - 1 : evidence - 1);
           }}>
           <FontAwesome5 name="angle-left" size={width / 8} />
         </TouchableOpacity>
@@ -134,7 +134,9 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
         <TouchableOpacity
           style={{width: width / 8, alignItems: 'flex-start'}}
           onPress={() => {
-            setEvidence((evidence - 1) % ghostPickerList.length);
+            setEvidence(
+              evidence == 0 ? ghostPickerList.length - 1 : evidence - 1,
+            );
           }}>
           <FontAwesome5 name="angle-left" size={width / 8} />
         </TouchableOpacity>
