@@ -144,7 +144,9 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
             }}>
             <FontAwesome5 name="angle-left" size={width / 8} />
           </TouchableOpacity>
-          <Text style={styles.pickerText}>{ghostList[evidence].name}</Text>
+          <Text style={styles.pickerText}>
+            {ghostPickerList[evidence].name}
+          </Text>
           <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
             <FontAwesome5
               name="angle-right"
