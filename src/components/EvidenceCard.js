@@ -23,11 +23,26 @@ const EvidenceCard = ({name, desc}) => {
         style={styles.imgBG}
       />
       <Text style={styles.commonText}>Evidence #1</Text>
-      <Picker type="evidence" evidence={e1} setEvidence={setE1} />
+      <Picker
+        type="evidence"
+        evidence={e1}
+        setEvidence={setE1}
+        setGhost={setGhost}
+      />
       <Text style={styles.commonText}>Evidence #2</Text>
-      <Picker type="evidence" evidence={e2} setEvidence={setE2} />
+      <Picker
+        type="evidence"
+        evidence={e2}
+        setEvidence={setE2}
+        setGhost={setGhost}
+      />
       <Text style={styles.commonText}>Evidence #3</Text>
-      <Picker type="evidence" evidence={e3} setEvidence={setE3} />
+      <Picker
+        type="evidence"
+        evidence={e3}
+        setEvidence={setE3}
+        setGhost={setGhost}
+      />
       <Text style={styles.commonText}>
         Using the evidence above, I have discovered that the Ghost type is:{' '}
       </Text>

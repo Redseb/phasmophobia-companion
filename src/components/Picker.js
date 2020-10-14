@@ -78,13 +78,14 @@ const ghostList = [
 ];
 
 //evidence and setEvidence are ghost and setGhost for type="ghost"
-const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
+const Picker = ({type, evidence, setEvidence, evidenceArr, setGhost}) => {
   if (type == 'evidence') {
     return (
       <View style={styles.container}>
         <TouchableOpacity
           style={{width: width / 8, alignItems: 'flex-start'}}
           onPress={() => {
+            setGhost(0);
             setEvidence(evidence == 0 ? evidenceList.length - 1 : evidence - 1);
           }}>
           <FontAwesome5 name="angle-left" size={width / 8} />
@@ -95,6 +96,7 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
             name="angle-right"
             size={width / 8}
             onPress={() => {
+              setGhost(0);
               setEvidence((evidence + 1) % evidenceList.length);
             }}
           />
@@ -145,7 +147,9 @@ const Picker = ({type, evidence, setEvidence, evidenceArr}) => {
             <FontAwesome5 name="angle-left" size={width / 8} />
           </TouchableOpacity>
           <Text style={styles.pickerText}>
-            {ghostPickerList[evidence].name}
+            {ghostPickerList[evidence].name == undefined
+              ? ghostPickerList[0].name
+              : ghostPickerList[evidence].name}
           </Text>
           <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
             <FontAwesome5
