@@ -4,6 +4,7 @@ import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 
 const {width, height} = Dimensions.get('screen');
 import Picker from '../components/Picker';
+import Button from '../components/Button';
 const EvidenceCard = ({name, desc}) => {
   //Evidence state
   const [e1, setE1] = useState(0);
@@ -22,6 +23,7 @@ const EvidenceCard = ({name, desc}) => {
         source={require('../../assets/images/oldPaper.jpg')}
         style={styles.imgBG}
       />
+
       <Text style={styles.commonText}>Evidence #1</Text>
       <Picker
         type="evidence"
@@ -52,6 +54,15 @@ const EvidenceCard = ({name, desc}) => {
         evidence={ghost}
         setEvidence={setGhost}
       />
+      <Button
+        text="Reset"
+        onPress={() => {
+          setE1(0);
+          setE2(0);
+          setE3(0);
+          setGhost(0);
+        }}
+      />
     </View>
   );
 };
@@ -61,7 +72,7 @@ const BORDERWIDTH = height / 200;
 const styles = StyleSheet.create({
   container: {
     width: width / 1.2,
-    height: height / 1.2,
+    height: height / 1.25,
     display: 'flex',
     alignSelf: 'center',
     justifyContent: 'space-around',
@@ -74,7 +85,7 @@ const styles = StyleSheet.create({
   },
   imgBG: {
     ...StyleSheet.absoluteFillObject,
-    height: height / 1.2 - BORDERWIDTH * 2,
+    height: height / 1.25 - BORDERWIDTH * 2,
     width: width / 1.2 - BORDERWIDTH * 2,
     borderRadius: 10,
     opacity: 0.5,

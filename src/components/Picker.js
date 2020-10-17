@@ -178,7 +178,7 @@ const Picker = ({type, evidence, setEvidence, evidenceArr, setGhost}) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: height / 6,
+    height: height / 15,
     width: width / 1.5,
     display: 'flex',
     flexDirection: 'row',
@@ -193,9 +193,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu',
   },
   evidenceRemainingContainer: {
-    height: height / 5,
+    height: height / 7,
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
   },
   header: {
     alignSelf: 'center',

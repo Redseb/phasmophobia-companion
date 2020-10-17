@@ -22,7 +22,7 @@ const BORDERWIDTH = height / 200;
 const styles = StyleSheet.create({
   container: {
     width: width / 1.2,
-    height: height / 1.2,
+    height: height / 1.25,
     display: 'flex',
     alignSelf: 'center',
     justifyContent: 'space-around',
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   imgBG: {
     ...StyleSheet.absoluteFillObject,
-    height: height / 1.2 - BORDERWIDTH * 2,
+    height: height / 1.25 - BORDERWIDTH * 2,
     width: width / 1.2 - BORDERWIDTH * 2,
     borderRadius: 10,
     opacity: 0.5,
