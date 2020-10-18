@@ -156,6 +156,7 @@ const cards = [
     desc: `Some Ghosts are able to write inside this book if placed nearby. Paranormal investigators started using pen and paper as an alternative form of communication to the Spirit Box. It was later discovered that only certain types of Ghosts will write.`,
   },
   {type: 'evidence'},
+  {type: 'timer'},
 ];
 
 export default cards;

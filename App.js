@@ -22,6 +22,7 @@ import IntroductionCard from './src/components/IntroductionCard';
 import GhostCard from './src/components/GhostCard';
 import ToolCard from './src/components/ToolCard';
 import EvidenceCard from './src/components/EvidenceCard';
+import TimerCard from './src/components/TimerCard';
 
 import BottomBar from './src/components/BottomBar';
 
@@ -51,6 +52,9 @@ const renderCard = ({item, index}) => {
       break;
     case 'evidence':
       return <EvidenceCard />;
+      break;
+    case 'timer':
+      return <TimerCard />;
       break;
   }
 };
