@@ -16,26 +16,24 @@ const TimerCard = () => {
         style={styles.imgBG}
       />
       <Text style={styles.name}>Timer</Text>
-      <View style={{borderWidth: 2}}>
-        <CountDown
-          id={timerId}
-          until={timeRemaining}
-          size={height / 20}
-          timeToShow={['M', 'S']}
-          timeLabels={{m: null, s: null}}
-          digitStyle={{backgroundColor: 'rgba(0, 0, 0, 0)', margin: 0}}
-          digitTxtStyle={styles.timerText}
-          separatorStyle={styles.timerText}
-          showSeparator
-          onPress={() => {
-            setTimeRemaining(timeRemaining == 5 * 60 ? 2 * 60 : 5 * 60);
-            setTimerId(timerId == 'timer1' ? 'timer2' : 'timer1');
-          }}
-          onFinish={() => {
-            alert('The timer has finished, the ghost may start haunting');
-          }}
-        />
-      </View>
+      <CountDown
+        id={timerId}
+        until={timeRemaining}
+        size={height / 20}
+        timeToShow={['M', 'S']}
+        timeLabels={{m: null, s: null}}
+        digitStyle={{backgroundColor: 'rgba(0, 0, 0, 0)', margin: 0}}
+        digitTxtStyle={styles.timerText}
+        separatorStyle={styles.timerText}
+        showSeparator
+        onPress={() => {
+          setTimeRemaining(timeRemaining == 5 * 60 ? 2 * 60 : 5 * 60);
+          setTimerId(timerId == 'timer1' ? 'timer2' : 'timer1');
+        }}
+        onFinish={() => {
+          alert('The timer has finished, the ghost may start haunting');
+        }}
+      />
       <Text
         style={{
           ...styles.commonText,
