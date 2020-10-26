@@ -56,7 +56,7 @@ const cards = [
     name: 'Banshee',
     desc: `A Banshee is a natural hunter and will attack anything. It has been known to stalk it’s prey one at a time until making it’s kill.`,
     strength: `A Banshee will only target one person at a time.`,
-    weakness: `Banshees feat the Crucifix and will be less aggressive when near one.`,
+    weakness: `Banshees fear the Crucifix and will be less aggressive when near one.`,
     evidence: `EMF Level 5, Fingerprints and Freezing Temperatures.`,
   },
   {
