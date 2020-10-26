@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import CountDown from 'react-native-countdown-component';
 import Button from './Button';
 
@@ -9,6 +16,7 @@ const {width, height} = Dimensions.get('screen');
 const TimerCard = () => {
   const [timeRemaining, setTimeRemaining] = useState(5 * 60);
   const [timerId, setTimerId] = useState('timer');
+  const [isPaused, setIsPaused] = useState(true);
   return (
     <View style={styles.container}>
       <Image
@@ -16,6 +24,7 @@ const TimerCard = () => {
         style={styles.imgBG}
       />
       <Text style={styles.name}>Timer</Text>
+
       <CountDown
         id={timerId}
         until={timeRemaining}
@@ -33,6 +42,7 @@ const TimerCard = () => {
         onFinish={() => {
           alert('The timer has finished, the ghost may start haunting');
         }}
+        running={!isPaused}
       />
       <Text
         style={{
@@ -42,6 +52,15 @@ const TimerCard = () => {
         }}>
         Tap the timer to reset and toggle the time remaining
       </Text>
+      <TouchableOpacity
+        onPress={() => {
+          setIsPaused(!isPaused);
+        }}
+        style={styles.buttonWrapper}>
+        <Text style={{...styles.commonText, fontWeight: 'bold'}}>
+          {isPaused ? 'Start' : 'Pause'}
+        </Text>
+      </TouchableOpacity>
       <Text style={styles.commonText}>
         Each investigation difficulty has a different amount of time before the
         ghost can start hunting:
@@ -94,6 +113,12 @@ const styles = StyleSheet.create({
     fontFamily: 'ShadowsIntoLight',
     fontWeight: 'normal',
     color: 'black',
+  },
+  buttonWrapper: {
+    borderWidth: 2,
+    borderRadius: 10,
+    padding: 5,
+    width: height / 10,
   },
 });
 
