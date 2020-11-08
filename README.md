@@ -1,3 +1,4 @@
+
 # Phasmophobia Companion
 ![Phasmophobia Companion Promo](https://i.imgur.com/kDN8S70.png "Phasmophobia Companion Promo")
 An unofficial companion app to the amazing horror game by Kinetic Games, Phasmophobia.
@@ -8,3 +9,9 @@ Accepting issues for feature requests and pulll requests.
 Phasmophobia Companion is currently only available on [Android](https://play.google.com/store/apps/details?id=com.phasmophobiacompanion) 
 
 ![Phasmophobia Screenshots](https://i.imgur.com/h789ECF.png "Phasmophobia Screenshots")
+
+## Installation
+1. Clone the project and install depedencies with: `yarn` and `npm install`
+Unfortunately the project mixes npm and yarn - hopefully will be fixed in the future.
+2. `npm start`
+3. `npm run android`
