@@ -17,7 +17,7 @@ const cards = [
   {
     type: 'intro',
     name: `A Hunter's Sanity`,
-    desc: `In your investigation into the supernatural you will need to make sure your Sanity is kept high. All types of Ghosts prey on our Sanity making them stronger the more insane we become.\n\n To Keep you sanity high around the paranormal make sure you stay in lit areas.\n\n `,
+    desc: `In your investigation into the supernatural you will need to make sure your Sanity is kept high. All types of Ghosts prey on our Sanity making them stronger the more insane we become.\n\n To keep your sanity high around the paranormal make sure you stay in lit areas.\n\n `,
   },
   {
     type: 'ghost',
@@ -96,7 +96,7 @@ const cards = [
     name: 'Demon',
     desc: `A Demon is one of the worst Ghosts you can encounter. It has been known to attack without a reason.`,
     strength: `Demons will attack more often than any other Ghost.`,
-    weakness: `Asking a Demon successful questions on the Ouija Board won’t lower the users sanity.`,
+    weakness: `Asking a Demon successful questions on the Ouija Board won’t lower the user's sanity.`,
     evidence: `Spirit Box, Ghost Writing and Freezing Temperatures`,
   },
   {
@@ -110,8 +110,8 @@ const cards = [
   {
     type: 'ghost',
     name: 'Oni',
-    desc: `Oni’s are a cousin to the Demon and possess extreme strength. There have been rumors that they become more active around their prey.`,
-    strength: `Oni’s are more active when people are nearby and have been seen moving objects at great speed.`,
+    desc: `Onis are a cousin to the Demon and possess extreme strength. There have been rumors that they become more active around their prey.`,
+    strength: `Onis are more active when people are nearby and have been seen moving objects at great speed.`,
     weakness: `Being more active will make the Oni easier to find and identify.`,
     evidence: `EMF Level 5, Spirit Box and Ghost Writing.`,
   },
@@ -123,7 +123,7 @@ const cards = [
   {
     type: 'tool',
     name: `Ouija Board`,
-    desc: `The most common way of accidentally summoning a ghost is with a Ouija Board so you may come across these during your investigations. Be careful if you choose to use it as they have been known to lower your sanity. To use one, activate it and then as a question with your voice.`,
+    desc: `The most common way of accidentally summoning a ghost is with a Ouija Board so you may come across these during your investigations. Be careful if you choose to use it as they have been known to lower your sanity. To use one, activate it and then ask a question with your voice.`,
   },
   {
     type: 'tool',
@@ -133,7 +133,7 @@ const cards = [
   {
     type: 'tool',
     name: `Spirit Box`,
-    desc: `Only certain ghosts will talk through a Spirit Box when asked a question with you voice. Make sure the lights are off.`,
+    desc: `Only certain ghosts will talk through a Spirit Box when asked a question with your voice. Make sure the lights are off.`,
   },
   {
     type: 'tool',
@@ -148,7 +148,7 @@ const cards = [
   {
     type: 'tool',
     name: `Ghost Orb`,
-    desc: `The classis paranormal evidence however not all ghosts have one. This will be visible on a camera.`,
+    desc: `The classic paranormal evidence however not all ghosts have one. This will be visible on a camera.`,
   },
   {
     type: 'tool',
