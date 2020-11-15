@@ -35,7 +35,6 @@ const renderCard = ({item, index}) => {
   switch (item.type) {
     case 'intro':
       return <IntroductionCard name={item.name} desc={item.desc} />;
-      break;
     case 'ghost':
       return (
         <GhostCard
@@ -46,16 +45,14 @@ const renderCard = ({item, index}) => {
           evidence={item.evidence}
         />
       );
-      break;
     case 'tool':
       return <ToolCard name={item.name} desc={item.desc} />;
-      break;
     case 'evidence':
       return <EvidenceCard />;
-      break;
     case 'timer':
       return <TimerCard />;
-      break;
+    case 'settings':
+      console.log('Settings card');
   }
 };
 
