@@ -36,7 +36,7 @@ import { introCardSwitch, ghostCardSwitch, toolCardSwitch } from "./src/util/tra
 
 const { width, height } = Dimensions.get('screen');
 
-const renderCard = (item, index, language) => {
+const renderCard = (item, index, language, setLanguage) => {
   let card = item;
   switch (item.type) {
     case 'intro':
@@ -51,27 +51,28 @@ const renderCard = (item, index, language) => {
           strength={card.strength}
           weakness={card.weakness}
           evidence={card.evidence}
+          language={language}
         />
       );
     case 'tool':
       card = toolCardSwitch(item, language);
-      return <ToolCard name={card.name} desc={card.desc} />;
+      return <ToolCard name={card.name} desc={card.desc} language={language} />;
     case 'evidence':
-      return <EvidenceCard />;
+      return <EvidenceCard language={language} />;
     case 'timer':
-      return <TimerCard />;
+      return <TimerCard language={language} />;
     case 'settings':
-      return <SettingsCard />;
+      return <SettingsCard language={language} setLanguage={setLanguage} />;
   }
 };
 
 const App = () => {
-  const [language, setLanguage] = useState("ru");
+  const [language, setLanguage] = useState("en");
   const carouselRef = useRef('carousel');
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   useEffect(() => {
     getData(LANGUAGE_KEY, setLanguage);
-    storeData(LANGUAGE_KEY, 'ru')
+    storeData(LANGUAGE_KEY, 'en')
     SplashScren.hide();
   }, []);
 
@@ -83,7 +84,7 @@ const App = () => {
           initialNumToRender={cards.length}
           ref={carouselRef}
           data={cards}
-          renderItem={({ item, index }) => { return renderCard(item, index, language) }}
+          renderItem={({ item, index }) => { return renderCard(item, index, language, setLanguage) }}
           sliderWidth={width}
           itemWidth={width / 1.2}
           layout={'default'}
@@ -93,6 +94,7 @@ const App = () => {
             setActiveIndex(carouselRef.current.currentIndex);
           }}
           removeClippedSubviews={true}
+          firstItem={1}
         />
         <BottomBar activeIndex={activeIndex} carouselRef={carouselRef} />
       </View>

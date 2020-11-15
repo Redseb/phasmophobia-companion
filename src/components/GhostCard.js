@@ -1,10 +1,11 @@
 import React from 'react';
 
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { labelSwitch } from "../util/translationSwitch";
 
-const {width, height} = Dimensions.get('screen');
+const { width, height } = Dimensions.get('screen');
 
-const GhostCard = ({name, desc, strength, weakness, evidence}) => {
+const GhostCard = ({ name, desc, strength, weakness, evidence, language }) => {
   return (
     <View style={styles.container}>
       <Image
@@ -14,15 +15,15 @@ const GhostCard = ({name, desc, strength, weakness, evidence}) => {
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.commonText}>{desc}</Text>
       <Text style={styles.commonText}>
-        <Text style={styles.strengthHeader}>Unique Strengths: </Text>
+        <Text style={styles.strengthHeader}>{labelSwitch(language).uniqueStrengths}</Text>
         {strength}
       </Text>
       <Text style={styles.commonText}>
-        <Text style={styles.weaknessHeader}>Weakness: </Text>
+        <Text style={styles.weaknessHeader}>{labelSwitch(language).uniqueWeaknesses}</Text>
         {weakness}
       </Text>
       <Text style={styles.commonText}>
-        <Text style={styles.EvidenceHeader}>Evidence: </Text>
+        <Text style={styles.EvidenceHeader}>{labelSwitch(language).evidence}: </Text>
         {evidence}
       </Text>
     </View>

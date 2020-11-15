@@ -169,10 +169,10 @@ const cards = [
     strength: `Onis are more active when people are nearby and have been seen moving objects at great speed.`,
     weakness: `Being more active will make the Oni easier to find and identify.`,
     evidence: `EMF Level 5, Spirit Box and Ghost Writing.`,
-    nameRU: `Óни`,
-    descRU: `Óни родственны Демону и невероятно сильны. Говорят, они становятся более активны, если жертва находится рядом.`,
-    strengthRU: `Óни более активны в присутствии людей и могут перемещать предметы с высокой скоростью.`,
-    weaknessRU: `Поскольку Óни очень активны, их легко обнаружить и распознать.`,
+    nameRU: `Oни`,
+    descRU: `Oни родственны Демону и невероятно сильны. Говорят, они становятся более активны, если жертва находится рядом.`,
+    strengthRU: `Oни более активны в присутствии людей и могут перемещать предметы с высокой скоростью.`,
+    weaknessRU: `Поскольку Oни очень активны, их легко обнаружить и распознать.`,
   },
   {
     type: 'tool',
@@ -230,8 +230,8 @@ const cards = [
     nameRU: `Блокнот`,
     descRU: `Исследователи паранормальных явлений начали использовать письмо на бумаге как альтернативный метод коммуникации с призраками. Но было обнаружено, что не все призраки будут общаться подобным способом.`,
   },
-  {type: 'evidence'},
-  {type: 'timer'},
+  { type: 'evidence' },
+  { type: 'timer' },
 ];
 
 export default cards;

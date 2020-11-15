@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -7,15 +7,15 @@ import {
   Dimensions,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {snapToItem} from 'react-native-snap-carousel';
-const {width, height} = Dimensions.get('screen');
+import { snapToItem } from 'react-native-snap-carousel';
+const { width, height } = Dimensions.get('screen');
 
-const INTRO_INDEX = 0;
-const GHOST_INDEX = 4;
-const TOOLS_INDEX = 16;
-const EVIDENCE_INDEX = 24;
+const INTRO_INDEX = 1;
+const GHOST_INDEX = 5;
+const TOOLS_INDEX = 17;
+const EVIDENCE_INDEX = 25;
 
-const BottomBar = ({carouselRef, activeIndex}) => {
+const BottomBar = ({ carouselRef, activeIndex }) => {
   const [currSection, setCurrSection] = useState(0);
   useEffect(() => {
     if (
