@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useRef, useState, useEffect} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -17,6 +17,7 @@ import {
   Dimensions,
 } from 'react-native';
 import SplashScren from 'react-native-splash-screen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import IntroductionCard from './src/components/IntroductionCard';
 import GhostCard from './src/components/GhostCard';
@@ -27,27 +28,34 @@ import SettingsCard from './src/components/SettingsCard';
 
 import BottomBar from './src/components/BottomBar';
 
-import Carousel, {snapToItem} from 'react-native-snap-carousel';
+import Carousel, { snapToItem } from 'react-native-snap-carousel';
 import cards from './src/cards';
 
-const {width, height} = Dimensions.get('screen');
+import { storeData, getData, LANGUAGE_KEY } from "./src/util/dataStorage";
+import { introCardSwitch, ghostCardSwitch, toolCardSwitch } from "./src/util/translationSwitch";
 
-const renderCard = ({item, index}) => {
+const { width, height } = Dimensions.get('screen');
+
+const renderCard = (item, index, language) => {
+  let card = item;
   switch (item.type) {
     case 'intro':
-      return <IntroductionCard name={item.name} desc={item.desc} />;
+      card = introCardSwitch(item, language);
+      return <IntroductionCard name={card.name} desc={card.desc} />;
     case 'ghost':
+      card = ghostCardSwitch(item, language);
       return (
         <GhostCard
-          name={item.name}
-          desc={item.desc}
-          strength={item.strength}
-          weakness={item.weakness}
-          evidence={item.evidence}
+          name={card.name}
+          desc={card.desc}
+          strength={card.strength}
+          weakness={card.weakness}
+          evidence={card.evidence}
         />
       );
     case 'tool':
-      return <ToolCard name={item.name} desc={item.desc} />;
+      card = toolCardSwitch(item, language);
+      return <ToolCard name={card.name} desc={card.desc} />;
     case 'evidence':
       return <EvidenceCard />;
     case 'timer':
@@ -58,11 +66,14 @@ const renderCard = ({item, index}) => {
 };
 
 const App = () => {
-  useEffect(() => {
-    SplashScren.hide();
-  }, []);
+  const [language, setLanguage] = useState("ru");
   const carouselRef = useRef('carousel');
   const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+    getData(LANGUAGE_KEY, setLanguage);
+    storeData(LANGUAGE_KEY, 'ru')
+    SplashScren.hide();
+  }, []);
 
   return (
     <>
@@ -72,12 +83,12 @@ const App = () => {
           initialNumToRender={cards.length}
           ref={carouselRef}
           data={cards}
-          renderItem={renderCard}
+          renderItem={({ item, index }) => { return renderCard(item, index, language) }}
           sliderWidth={width}
           itemWidth={width / 1.2}
           layout={'default'}
           containerCustomStyle={styles.carouselContainer}
-          contentContainerCustomStyle={{alignSelf: 'center'}}
+          contentContainerCustomStyle={{ alignSelf: 'center' }}
           onSnapToItem={() => {
             setActiveIndex(carouselRef.current.currentIndex);
           }}
