@@ -22,6 +22,8 @@ const SettingsCard = ({name, desc}) => {
         source={require('../../assets/images/oldPaper.jpg')}
         style={styles.imgBG}
       />
+      <Text style={styles.name}>Settings</Text>
+      <Text style={styles.commonText}>Language</Text>
     </View>
   );
 };

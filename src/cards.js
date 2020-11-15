@@ -1,5 +1,8 @@
 const cards = [
   {
+    type: 'settings',
+  },
+  {
     type: 'intro',
     name: 'Introducing Ghosts',
     desc: `A Ghost is an evil spirit of a dead person that feeds off peoples fear. They are created from violent, sudden deaths. If disturbed they can wreck havoc across neighbourhoods and they have also been known to be up to 1000 years old.\n\n This guide will help you understand what you need to do to surivive.`,

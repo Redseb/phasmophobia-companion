@@ -23,6 +23,7 @@ import GhostCard from './src/components/GhostCard';
 import ToolCard from './src/components/ToolCard';
 import EvidenceCard from './src/components/EvidenceCard';
 import TimerCard from './src/components/TimerCard';
+import SettingsCard from './src/components/SettingsCard';
 
 import BottomBar from './src/components/BottomBar';
 
@@ -52,7 +53,7 @@ const renderCard = ({item, index}) => {
     case 'timer':
       return <TimerCard />;
     case 'settings':
-      console.log('Settings card');
+      return <SettingsCard />;
   }
 };
 
