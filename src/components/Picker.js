@@ -7,78 +7,90 @@ import {
   Dimensions,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-
+import {storeData, getData, LANGUAGE_KEY} from '../util/dataStorage';
+import {LANGUAGES, labelSwitch} from '../util/translationSwitch';
 const {width, height} = Dimensions.get('screen');
 
-const evidenceList = [
-  'No Evidence', //0
-  'EMF Level 5', //1
-  'Spirit Box', //2
-  'Fingerprints', //3
-  'Ghost Orb', //4
-  'Ghost Writing', //5
-  'Freezing Temperatures', //6
-];
-
-// Ghost: name: <String>, evidence:[integer, integer, integer]
-// evidence number is the index in evidenceList
-const ghostList = [
-  {
-    name: 'Not Yet Discovered',
-    evidence: [0, 0, 0],
-  },
-  {
-    name: 'Spirit',
-    evidence: [2, 3, 5],
-  },
-  {
-    name: 'Wraith',
-    evidence: [3, 6, 2],
-  },
-  {
-    name: 'Phantom',
-    evidence: [1, 4, 6],
-  },
-  {
-    name: 'Poltergeist',
-    evidence: [2, 3, 4],
-  },
-  {
-    name: 'Banshee',
-    evidence: [1, 3, 6],
-  },
-  {
-    name: 'Jinn',
-    evidence: [2, 4, 1],
-  },
-  {
-    name: 'Mare',
-    evidence: [2, 4, 6],
-  },
-  {
-    name: 'Revenant',
-    evidence: [1, 3, 5],
-  },
-  {
-    name: 'Shade',
-    evidence: [1, 4, 5],
-  },
-  {
-    name: 'Demon',
-    evidence: [2, 5, 6],
-  },
-  {
-    name: 'Yurei',
-    evidence: [4, 5, 6],
-  },
-  {
-    name: 'Oni',
-    evidence: [1, 2, 5],
-  },
-];
+// const LANGUAGES = {en: {name: 'English', key: 'en'}, ru: {name: 'Russian', key: 'ru'}};
 
 //evidence and setEvidence are ghost and setGhost for type="ghost"
-const Picker = ({type, evidence, setEvidence, evidenceArr, setGhost}) => {
+const Picker = ({
+  type,
+  evidence,
+  setEvidence,
+  evidenceArr,
+  setGhost,
+  setLanguage,
+  language,
+}) => {
+  let labels = labelSwitch(language);
+  const evidenceList = [
+    labels.noEvidence, //0
+    labels.emf5, //1
+    labels.spiritBox, //2
+    labels.fingerprints, //3
+    labels.ghostOrb, //4
+    labels.ghostWriting, //5
+    labels.freezingTemp, //6
+  ];
+
+  // Ghost: name: <String>, evidence:[integer, integer, integer]
+  // evidence number is the index in evidenceList
+  const ghostList = [
+    {
+      name: labels.notYedDiscovered,
+      evidence: [0, 0, 0],
+    },
+    {
+      name: labels.spirit,
+      evidence: [2, 3, 5],
+    },
+    {
+      name: labels.wraith,
+      evidence: [3, 6, 2],
+    },
+    {
+      name: labels.phantom,
+      evidence: [1, 4, 6],
+    },
+    {
+      name: labels.poltergeist,
+      evidence: [2, 3, 4],
+    },
+    {
+      name: labels.banshee,
+      evidence: [1, 3, 6],
+    },
+    {
+      name: labels.jinn,
+      evidence: [2, 4, 1],
+    },
+    {
+      name: labels.mare,
+      evidence: [2, 4, 6],
+    },
+    {
+      name: labels.revenant,
+      evidence: [1, 3, 5],
+    },
+    {
+      name: labels.shade,
+      evidence: [1, 4, 5],
+    },
+    {
+      name: labels.demon,
+      evidence: [2, 5, 6],
+    },
+    {
+      name: labels.yurei,
+      evidence: [4, 5, 6],
+    },
+    {
+      name: labels.oni,
+      evidence: [1, 2, 5],
+    },
+  ];
+
   if (type == 'evidence') {
     return (
       <View style={styles.container}>
@@ -103,7 +115,7 @@ const Picker = ({type, evidence, setEvidence, evidenceArr, setGhost}) => {
         </TouchableOpacity>
       </View>
     );
-  } else {
+  } else if (type == 'ghost') {
     //Filter out the ghost list
     const ghostPickerList = ghostList.filter((ghost, index) => {
       let passes = true;
@@ -172,6 +184,35 @@ const Picker = ({type, evidence, setEvidence, evidenceArr, setGhost}) => {
           </Text>
         </View>
       </>
+    );
+  } else if (type == 'language') {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={{width: width / 8, alignItems: 'flex-start'}}
+          onPress={() => {
+            const newIndex =
+              evidence == 0 ? LANGUAGES.length - 1 : evidence - 1;
+            setEvidence(newIndex);
+            setLanguage(LANGUAGES[newIndex].key);
+            storeData(LANGUAGE_KEY, LANGUAGES[newIndex].key);
+          }}>
+          <FontAwesome5 name="angle-left" size={width / 8} />
+        </TouchableOpacity>
+        <Text style={styles.pickerText}>{LANGUAGES[evidence].name}</Text>
+        <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
+          <FontAwesome5
+            name="angle-right"
+            size={width / 8}
+            onPress={() => {
+              const newIndex = (evidence + 1) % LANGUAGES.length;
+              setEvidence(newIndex);
+              setLanguage(LANGUAGES[newIndex].key);
+              storeData(LANGUAGE_KEY, LANGUAGES[newIndex].key);
+            }}
+          />
+        </TouchableOpacity>
+      </View>
     );
   }
 };

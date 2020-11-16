@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {labelSwitch} from '../util/translationSwitch';
 
 const {width, height} = Dimensions.get('screen');
 import Picker from '../components/Picker';
 import Button from '../components/Button';
-const EvidenceCard = ({name, desc}) => {
+const EvidenceCard = ({name, desc, language}) => {
   //Evidence state
   const [e1, setE1] = useState(0);
   const [e2, setE2] = useState(0);
@@ -16,6 +17,7 @@ const EvidenceCard = ({name, desc}) => {
   useEffect(() => {
     setGhost(0);
   }, [e1, e2, e3]);
+  const labels = labelSwitch(language);
 
   return (
     <View style={styles.container}>
@@ -24,38 +26,40 @@ const EvidenceCard = ({name, desc}) => {
         style={styles.imgBG}
       />
 
-      <Text style={styles.commonText}>Evidence #1</Text>
+      <Text style={styles.commonText}>{labels.evidence} #1</Text>
       <Picker
         type="evidence"
         evidence={e1}
         setEvidence={setE1}
         setGhost={setGhost}
+        language={language}
       />
-      <Text style={styles.commonText}>Evidence #2</Text>
+      <Text style={styles.commonText}>{labels.evidence} #2</Text>
       <Picker
         type="evidence"
         evidence={e2}
         setEvidence={setE2}
         setGhost={setGhost}
+        language={language}
       />
-      <Text style={styles.commonText}>Evidence #3</Text>
+      <Text style={styles.commonText}>{labels.evidence} #3</Text>
       <Picker
         type="evidence"
         evidence={e3}
         setEvidence={setE3}
         setGhost={setGhost}
+        language={language}
       />
-      <Text style={styles.commonText}>
-        Using the evidence above, I have discovered that the Ghost type is:{' '}
-      </Text>
+      <Text style={styles.commonText}>{labels.evidenceAbove}</Text>
       <Picker
         type="ghost"
         evidenceArr={[e1, e2, e3]}
         evidence={ghost}
         setEvidence={setGhost}
+        language={language}
       />
       <Button
-        text="Reset"
+        text={labels.reset}
         onPress={() => {
           setE1(0);
           setE2(0);

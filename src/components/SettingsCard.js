@@ -1,29 +1,37 @@
 import React, {useState, useEffect} from 'react';
 
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
-
+import {storeData, getData, LANGUAGE_KEY} from '../util/dataStorage';
+import {labelSwitch, LANGUAGES} from '../util/translationSwitch';
 const {width, height} = Dimensions.get('screen');
 import Picker from '../components/Picker';
-const SettingsCard = ({name, desc}) => {
-  //Evidence state
-  const [e1, setE1] = useState(0);
-  const [e2, setE2] = useState(0);
-  const [e3, setE3] = useState(0);
-  const [ghost, setGhost] = useState(0);
-
-  //Whenever any evidence is updated, reset ghost
-  useEffect(() => {
-    setGhost(0);
-  }, [e1, e2, e3]);
-
+const SettingsCard = ({
+  language,
+  setLanguage,
+  languageIndex,
+  setLanguageIndex,
+}) => {
+  const labels = labelSwitch(language);
   return (
     <View style={styles.container}>
       <Image
         source={require('../../assets/images/oldPaper.jpg')}
         style={styles.imgBG}
       />
-      <Text style={styles.name}>Settings</Text>
-      <Text style={styles.commonText}>Language</Text>
+      <Text style={styles.name}>{labels.settings}</Text>
+      <View>
+        <Text style={styles.commonText}>Language</Text>
+        <Picker
+          type="language"
+          evidence={languageIndex}
+          setEvidence={setLanguageIndex}
+          setLanguage={setLanguage}
+        />
+      </View>
+      <Text style={styles.commonText}>{labels.review}</Text>
+      <Text style={styles.smallText}>
+        Translation Credit: Mikołaj Zyzański, StrongPlog
+      </Text>
     </View>
   );
 };
@@ -36,7 +44,7 @@ const styles = StyleSheet.create({
     height: height / 1.25,
     display: 'flex',
     alignSelf: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     backgroundColor: '#DCD289',
     padding: width / 20,
@@ -59,6 +67,12 @@ const styles = StyleSheet.create({
     fontSize: height / 40,
     textAlign: 'center',
     fontFamily: 'Ubuntu',
+  },
+  smallText: {
+    fontSize: height / 60,
+    textAlign: 'center',
+    fontFamily: 'Ubuntu',
+    alignSelf: 'flex-end',
   },
 });
 

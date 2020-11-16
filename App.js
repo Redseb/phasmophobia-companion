@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -28,15 +28,27 @@ import SettingsCard from './src/components/SettingsCard';
 
 import BottomBar from './src/components/BottomBar';
 
-import Carousel, { snapToItem } from 'react-native-snap-carousel';
+import Carousel, {snapToItem} from 'react-native-snap-carousel';
 import cards from './src/cards';
 
-import { storeData, getData, LANGUAGE_KEY } from "./src/util/dataStorage";
-import { introCardSwitch, ghostCardSwitch, toolCardSwitch } from "./src/util/translationSwitch";
+import {storeData, getData, LANGUAGE_KEY} from './src/util/dataStorage';
+import {
+  introCardSwitch,
+  ghostCardSwitch,
+  toolCardSwitch,
+  LANGUAGES,
+} from './src/util/translationSwitch';
 
-const { width, height } = Dimensions.get('screen');
+const {width, height} = Dimensions.get('screen');
 
-const renderCard = (item, index, language, setLanguage) => {
+const renderCard = (
+  item,
+  index,
+  language,
+  setLanguage,
+  languageIndex,
+  setLanguageIndex,
+) => {
   let card = item;
   switch (item.type) {
     case 'intro':
@@ -62,17 +74,24 @@ const renderCard = (item, index, language, setLanguage) => {
     case 'timer':
       return <TimerCard language={language} />;
     case 'settings':
-      return <SettingsCard language={language} setLanguage={setLanguage} />;
+      return (
+        <SettingsCard
+          language={language}
+          setLanguage={setLanguage}
+          languageIndex={languageIndex}
+          setLanguageIndex={setLanguageIndex}
+        />
+      );
   }
 };
 
 const App = () => {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState('en');
+  const [languageIndex, setLanguageIndex] = useState(0);
   const carouselRef = useRef('carousel');
   const [activeIndex, setActiveIndex] = useState(1);
   useEffect(() => {
-    getData(LANGUAGE_KEY, setLanguage);
-    storeData(LANGUAGE_KEY, 'en')
+    getData(LANGUAGE_KEY, setLanguage, setLanguageIndex);
     SplashScren.hide();
   }, []);
 
@@ -84,12 +103,21 @@ const App = () => {
           initialNumToRender={cards.length}
           ref={carouselRef}
           data={cards}
-          renderItem={({ item, index }) => { return renderCard(item, index, language, setLanguage) }}
+          renderItem={({item, index}) => {
+            return renderCard(
+              item,
+              index,
+              language,
+              setLanguage,
+              languageIndex,
+              setLanguageIndex,
+            );
+          }}
           sliderWidth={width}
           itemWidth={width / 1.2}
           layout={'default'}
           containerCustomStyle={styles.carouselContainer}
-          contentContainerCustomStyle={{ alignSelf: 'center' }}
+          contentContainerCustomStyle={{alignSelf: 'center'}}
           onSnapToItem={() => {
             setActiveIndex(carouselRef.current.currentIndex);
           }}

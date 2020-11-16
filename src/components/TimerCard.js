@@ -10,20 +10,22 @@ import {
 } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 import Button from './Button';
+import {labelSwitch} from '../util/translationSwitch';
 
 const {width, height} = Dimensions.get('screen');
 
-const TimerCard = () => {
+const TimerCard = ({language}) => {
   const [timeRemaining, setTimeRemaining] = useState(5 * 60);
   const [timerId, setTimerId] = useState('timer');
   const [isPaused, setIsPaused] = useState(true);
+  const labels = labelSwitch(language);
   return (
     <View style={styles.container}>
       <Image
         source={require('../../assets/images/oldPaper.jpg')}
         style={styles.imgBG}
       />
-      <Text style={styles.name}>Timer</Text>
+      <Text style={styles.name}>{labels.timer}</Text>
 
       <CountDown
         id={timerId}
@@ -40,7 +42,7 @@ const TimerCard = () => {
           setTimerId(timerId == 'timer1' ? 'timer2' : 'timer1');
         }}
         onFinish={() => {
-          alert('The timer has finished, the ghost may start haunting');
+          alert(labels.timerFinished);
         }}
         running={!isPaused}
       />
@@ -50,7 +52,7 @@ const TimerCard = () => {
           fontStyle: 'italic',
           fontSize: height / 50,
         }}>
-        Tap the timer to reset and toggle the time remaining
+        {labels.resetTimer}
       </Text>
       <TouchableOpacity
         onPress={() => {
@@ -58,20 +60,19 @@ const TimerCard = () => {
         }}
         style={styles.buttonWrapper}>
         <Text style={{...styles.commonText, fontWeight: 'bold'}}>
-          {isPaused ? 'Start' : 'Pause'}
+          {isPaused ? labels.start : labels.pause}
         </Text>
       </TouchableOpacity>
       <Text style={styles.commonText}>
-        Each investigation difficulty has a different amount of time before the
-        ghost can start hunting:
+        {labels.investigationDifficultyToTime}
       </Text>
       <View>
-        <Text style={styles.commonText}>Amateur - 5:00</Text>
-        <Text style={styles.commonText}>Intermediate - 2:00</Text>
-        <Text style={styles.commonText}>Professional - 0:00</Text>
+        <Text style={styles.commonText}>{labels.amateur} - 5:00</Text>
+        <Text style={styles.commonText}>{labels.intermediate} - 2:00</Text>
+        <Text style={styles.commonText}>{labels.professional} - 0:00</Text>
       </View>
       <Text style={{...styles.commonText, fontWeight: 'bold'}}>
-        Reset the timer when you leave the van!
+        {labels.resetTimerWhenYouLeave}
       </Text>
     </View>
   );

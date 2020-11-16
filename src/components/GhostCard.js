@@ -1,11 +1,37 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
-import { labelSwitch } from "../util/translationSwitch";
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {labelSwitch} from '../util/translationSwitch';
 
-const { width, height } = Dimensions.get('screen');
+const {width, height} = Dimensions.get('screen');
 
-const GhostCard = ({ name, desc, strength, weakness, evidence, language }) => {
+const GhostCard = ({name, desc, strength, weakness, evidence, language}) => {
+  evidence = evidence.split(/, /);
+  let labels = labelSwitch(language);
+  let translatedEvidence = [];
+  evidence.forEach((evidence) => {
+    switch (evidence) {
+      case 'EMF Level 5':
+        translatedEvidence.push(labels.emf5);
+        break;
+      case 'Spirit Box':
+        translatedEvidence.push(labels.spiritBox);
+        break;
+      case 'Fingerprints':
+        translatedEvidence.push(labels.fingerprints);
+        break;
+      case 'Ghost Orb':
+        translatedEvidence.push(labels.ghostOrb);
+        break;
+      case 'Ghost Writing':
+        translatedEvidence.push(labels.ghostWriting);
+        break;
+      case 'Freezing Temperatures':
+        translatedEvidence.push(labels.freezingTemp);
+        break;
+    }
+  });
+
   return (
     <View style={styles.container}>
       <Image
@@ -15,16 +41,22 @@ const GhostCard = ({ name, desc, strength, weakness, evidence, language }) => {
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.commonText}>{desc}</Text>
       <Text style={styles.commonText}>
-        <Text style={styles.strengthHeader}>{labelSwitch(language).uniqueStrengths}</Text>
+        <Text style={styles.strengthHeader}>
+          {labelSwitch(language).uniqueStrengths}
+        </Text>
         {strength}
       </Text>
       <Text style={styles.commonText}>
-        <Text style={styles.weaknessHeader}>{labelSwitch(language).uniqueWeaknesses}</Text>
+        <Text style={styles.weaknessHeader}>
+          {labelSwitch(language).uniqueWeaknesses}
+        </Text>
         {weakness}
       </Text>
       <Text style={styles.commonText}>
-        <Text style={styles.EvidenceHeader}>{labelSwitch(language).evidence}: </Text>
-        {evidence}
+        <Text style={styles.EvidenceHeader}>
+          {labelSwitch(language).evidence}:{' '}
+        </Text>
+        {translatedEvidence.join(', ')}
       </Text>
     </View>
   );
