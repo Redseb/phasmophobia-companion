@@ -30,7 +30,7 @@ const SettingsCard = ({
       </View>
       <Text style={styles.commonText}>{labels.review}</Text>
       <Text style={styles.smallText}>
-        Translation Credit: Mikołaj Zyzański, StrongPlog
+        Translation Credit: Mikołaj Zyzański, StrongPlog, Narva
       </Text>
     </View>
   );

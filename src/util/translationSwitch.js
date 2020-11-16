@@ -8,6 +8,10 @@ const introCardSwitch = (item, language) => {
       card.name = item.nameRU;
       card.desc = item.descRU;
       return card;
+    case 'es':
+      card.name = item.nameES;
+      card.desc = item.descES;
+      return card;
   }
   return card;
 };
@@ -28,6 +32,13 @@ const ghostCardSwitch = (item, language) => {
       card.weakness = item.weaknessRU;
       card.evidence = item.evidence;
       return card;
+    case 'es':
+      card.name = item.nameES;
+      card.desc = item.descES;
+      card.strength = item.strengthES;
+      card.weakness = item.weaknessES;
+      card.evidence = item.evidence;
+      return card;
   }
   return card;
 };
@@ -42,6 +53,10 @@ const toolCardSwitch = (item, language) => {
       card.name = item.nameRU;
       card.desc = item.descRU;
       return card;
+    case 'es':
+      card.name = item.nameES;
+      card.desc = item.descES;
+      return card;
   }
   return card;
 };
@@ -50,56 +65,11 @@ const labelSwitch = (language) => {
   switch (language) {
     case 'ru':
       return labelsRU;
+    case 'es':
+      return labelsES;
     default:
       return labelsEN;
   }
-};
-
-const labelsRU = {
-  introduction: 'Введение',
-  ghosts: 'Призраки',
-  tools: 'Инструменты',
-  evidence: 'Улики',
-  noEvidence: 'Не найдено',
-  emf5: 'ЭМП ур. 5',
-  spiritBox: 'Радиоприёмник',
-  fingerprints: 'Отпечатки',
-  ghostOrb: 'Призрачный огонёк',
-  ghostWriting: 'Записи в блокноте',
-  freezingTemp: 'Минусовая температура',
-  evidenceAbove:
-    'На основе вышеперечисленных доказательств, я заключаю, что это:',
-  notYedDiscovered: 'Не найдено',
-  evidenceRemaining: 'Возможные оставшиеся улики',
-  all: 'Все',
-  reset: 'Сброс',
-  timer: 'Таймер',
-  timerFinished: 'Таймер закончился, призрак может начать преследовать',
-  resetTimer: 'Нажмите для сброса и настройки времени',
-  start: 'Старт',
-  pause: 'Пауза',
-  investigationDifficultyToTime:
-    'Каждый уровень сложности имеет разное количество времени, прежде чем призрак начнёт охоту',
-  amateur: 'Любитель',
-  intermediate: 'Средний',
-  professional: 'Профессионал',
-  resetTimerWhenYouLeave: 'Сбросьте таймер на выходе из фургона!',
-  uniqueStrengths: 'Уникальные сильные стороны: ',
-  uniqueWeaknesses: 'Уникальные недостатки: ',
-  settings: 'настройки',
-  spirit: 'Дух',
-  wraith: 'Мираж',
-  phantom: 'Фантом',
-  poltergeist: 'Полтергейст',
-  banshee: 'Банши',
-  jinn: 'Джинн',
-  mare: 'Мара',
-  revenant: 'Ревенант',
-  shade: 'Тень',
-  demon: 'Демон',
-  yurei: 'Юрэй',
-  oni: 'Oни',
-  review: 'Оставьте отзыв!',
 };
 
 const labelsEN = {
@@ -147,11 +117,111 @@ const labelsEN = {
   yurei: 'Yurei',
   oni: 'Oni',
   review: 'Leave a review!',
+  none: 'None',
+};
+
+const labelsRU = {
+  introduction: 'Введение',
+  ghosts: 'Призраки',
+  tools: 'Инструменты',
+  evidence: 'Улики',
+  noEvidence: 'Не найдено',
+  emf5: 'ЭМП ур. 5',
+  spiritBox: 'Радиоприёмник',
+  fingerprints: 'Отпечатки',
+  ghostOrb: 'Призрачный огонёк',
+  ghostWriting: 'Записи в блокноте',
+  freezingTemp: 'Минусовая температура',
+  evidenceAbove:
+    'На основе вышеперечисленных доказательств, я заключаю, что это:',
+  notYedDiscovered: 'Не найдено',
+  evidenceRemaining: 'Возможные оставшиеся улики',
+  all: 'Все',
+  reset: 'Сброс',
+  timer: 'Таймер',
+  timerFinished: 'Таймер закончился, призрак может начать преследовать',
+  resetTimer: 'Нажмите для сброса и настройки времени',
+  start: 'Старт',
+  pause: 'Пауза',
+  investigationDifficultyToTime:
+    'Каждый уровень сложности имеет разное количество времени, прежде чем призрак начнёт охоту',
+  amateur: 'Любитель',
+  intermediate: 'Средний',
+  professional: 'Профессионал',
+  resetTimerWhenYouLeave: 'Сбросьте таймер на выходе из фургона!',
+  uniqueStrengths: 'Уникальные сильные стороны: ',
+  uniqueWeaknesses: 'Уникальные недостатки: ',
+  settings: 'настройки',
+  spirit: 'Дух',
+  wraith: 'Мираж',
+  phantom: 'Фантом',
+  poltergeist: 'Полтергейст',
+  banshee: 'Банши',
+  jinn: 'Джинн',
+  mare: 'Мара',
+  revenant: 'Ревенант',
+  shade: 'Тень',
+  demon: 'Демон',
+  yurei: 'Юрэй',
+  oni: 'Oни',
+  review: 'Оставьте отзыв!',
+  none: 'никто',
+};
+
+const labelsES = {
+  introduction: 'Introducción',
+  ghosts: 'Fantasmas',
+  tools: 'Herramientas',
+  evidence: 'Pruebas',
+  noEvidence: 'Sin pruebas',
+  emf5: 'EMF Nivel 5',
+  spiritBox: 'Spirit Box',
+  fingerprints: 'Huellas dactilares',
+  ghostOrb: 'Orbes',
+  ghostWriting: 'Escritura fantasma',
+  freezingTemp: 'Temperaturas bajo cero',
+  evidenceAbove:
+    'Usando las pruebas encontradas, he descubierto que el tipo de Fantasma es:',
+  notYedDiscovered: 'Aún no descubierto',
+  evidenceRemaining: 'Posibles pruebas restantes',
+  all: 'Todas',
+  reset: 'Reset',
+  timer: 'Temporizador',
+  timerFinished:
+    'El temporizador ha terminado, el fantasma puede empezar a acechar',
+  resetTimer:
+    'Toca el temporizador para resetear y para cambiar el tiempo restante.',
+  start: 'Empezar',
+  pause: 'Pausar',
+  investigationDifficultyToTime:
+    'Cada nivel de dificultad tiene un tiempo determinado antes de que el Fantasma empiece a atacar.',
+  amateur: 'Amateur',
+  intermediate: 'Intermedio',
+  professional: 'Profesional',
+  resetTimerWhenYouLeave: '¡Reajusta el temporizador cuando salgas del camión!',
+  uniqueStrengths: 'Puntos fuertes: ',
+  uniqueWeaknesses: 'Puntos débiles: ',
+  settings: 'Ajustes',
+  spirit: 'Espíritu',
+  wraith: 'Espectro',
+  phantom: 'Ente',
+  poltergeist: 'Poltergeist',
+  banshee: 'Banshee',
+  jinn: 'Jinn',
+  mare: 'Pesadilla',
+  revenant: 'Revenant',
+  shade: 'Sombra',
+  demon: 'Demonio',
+  yurei: 'Yurei',
+  oni: 'Oni',
+  review: '¡Deja una reseña!',
+  none: 'Ninguna',
 };
 
 const LANGUAGES = [
   {key: 'en', name: 'English'},
   {key: 'ru', name: 'Russian'},
+  {key: 'es', name: 'Spanish'},
 ];
 
 export {

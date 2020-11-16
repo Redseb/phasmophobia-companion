@@ -8,6 +8,9 @@ const cards = [
     desc: `A Ghost is an evil spirit of a dead person that feeds off peoples fear. They are created from violent, sudden deaths. If disturbed they can wreck havoc across neighbourhoods and they have also been known to be up to 1000 years old.\n\n This guide will help you understand what you need to do to surivive.`,
     nameRU: 'Призраки',
     descRU: `Призрак - это злой дух мёртвого человека, который питается страхом людей. Призраки рождаются в результате насильственной, преждевременной смерти. Если их потревожить, они могут сеять хаос в окрестностях на протяжении тысячелетий. \n \n Это руководство поможет вам понять, что вам нужно делать, чтобы выжить.`,
+    nameES: 'Introducción a los Fantasmas',
+    descES:
+      'El Fantasma es un espíritu maligno de una persona muerta que se alimenta del miedo de sus víctimas. Surgen a partir de una muerte violenta y repentina. Si se les molesta pueden llegar a causar estragos en los vecindarios, se conoce que pueden llegar a atener hasta 1000 años de edad.\n\n Esta guía te ayudará a entender qué tienes que hacer para sobrevivir.',
   },
   {
     type: 'intro',
@@ -15,6 +18,8 @@ const cards = [
     desc: `Evidence of the supernatural is high in demand which means it can sell. Hunting Ghosts however is an extremely dangerous task.\n\n It will be your job to enter locations and gather as much evidence of the supernatural as possible, just remember, don't outstay your welcome.\n\n `,
     nameRU: `Сбор доказательств`,
     descRU: `Доказательства сверхъестественного пользуются большим спросом, а значит, их можно продавать. Однако охота на призраков - чрезвычайно опасная работа. \n \n Вашей задачей будет проникать в места обитания призраков и собирать как можно больше доказательств сверхъестественного. Но не злоупотребляйте гостеприимством хозяев. \n \n`,
+    nameES: `Reuniendo pruebas`,
+    descES: `Hay una gran demanda de pruebas paranormales lo que hace que se compren a un precio alto. Sin embargo, cazar fantasmas es una tarea extremadamente peligrosa.\n\n Será vuestro trabajo acudir a lugares y reunir pruebas que corroboren la existencia de actividad paranormal. Pero no abuséis de la hospitalidad de vuestro anfitrión.\n\n`,
   },
   {
     type: 'intro',
@@ -22,6 +27,8 @@ const cards = [
     desc: `In order to discover what type of Ghost you are dealing with you will have to learn each Ghosts strengths and weaknesses.\n\nThe digital clock in the truck shows you how long you have before the Ghost will get angry and lower your sanity faster, use this time to find the Ghost and setup equipment. If your sanity becomes too low the recommended action is to leave.`,
     nameRU: `Выживание`,
     descRU: `Чтобы узнать, с каким типом Призраков вы имеете дело, вам нужно изучить сильные и слабые стороны каждого Призрака. \n \n Таймер в грузовике показывает, сколько времени у вас осталось до того, как Призрак рассердится и начнет снижать уровень вашего Рассудка сильнее. Используйте это время, чтобы найти Призрака и настроить оборудование. Если уровень Рассудка становится слишком низким - лучше уйти.`,
+    nameES: `Mantenerse vivo`,
+    descES: `Para descubrir con qué tipo de Fantasma estás tratando tendrás que aprender los puntos fuertes y débiles de cada uno.\n\n El reloj digital del camión te muestra cuánto tiempo tienes antes de que el Fantasma se enfade y te baje la cordura más rápido, usa este tiempo para encontrar al Fantasma y preparar el equipo. Si tu cordura se vuelve demasiado baja, lo recomendable es abandonar.`,
   },
   {
     type: 'intro',
@@ -29,6 +36,8 @@ const cards = [
     desc: `In your investigation into the supernatural you will need to make sure your Sanity is kept high. All types of Ghosts prey on our Sanity making them stronger the more insane we become.\n\n To keep your sanity high around the paranormal make sure you stay in lit areas.\n\n `,
     nameRU: `Рассудок охотника`,
     descRU: `Во время расследования вам нужно будет следить за тем, чтобы уровень Рассудка был достаточно высок. Все виды призраков питаются нашим страхом и становятся тем сильнее, чем безумнее мы становимся. \n \n Чтобы поддерживать высокий уровень рассудка в присутствии паранормальных сил, старайтесь оставаться на свету. \n \n`,
+    nameES: `Cordura`,
+    descES: `Mientras investigas fenómenos paranormales debes asegurarte de que tu Cordura se mantiene alta. Los Fantasmas intentarán mermar tu Cordura haciéndolos más fuertes cuando más loco te vuelvas.\n\n Para mantener tus niveles de Cordura de manera estable, quédate en las zonas iluminadas.\n\n`,
   },
   {
     type: 'ghost',
@@ -41,6 +50,10 @@ const cards = [
     descRU: `Дух - наиболее распространённый вид призрака, но он тоже силён и опасен. Духов можно обнаружить там, где недавно при странных обстоятельствах погибли люди.`,
     strengthRU: `Нет`,
     weaknessRU: `Использование Благовония обезоруживает Духа на долгое время`,
+    nameES: `Espíritu`,
+    descES: `Un Espíritu es uno de los Fantasmas más comunes. Aun así sigue siendo muy poderoso y peligroso. Se les ha avistado en lugares donde ha ocurrido una muerte inexplicable.`,
+    strengthES: `Ninguno`,
+    weaknessES: `Usar Varillas de Incienso cerca de un Espíritu hará que no ataque por un largo periodo de tiempo.`,
   },
   {
     type: 'ghost',
@@ -53,6 +66,10 @@ const cards = [
     descRU: `Мираж - один из самых опасных видов призраков. Единственный из всех, способный парить, а также проходить сквозь стены.`,
     strengthRU: `Мираж практически никогда не касается земли, а следовательно, не оставляет следов.`,
     weaknessRU: `Соль токсична для Миража.`,
+    nameES: `Espectro`,
+    descES: `Un Espectro es uno de los Fantasmas más peligrosos. También es el único Fantasma que tiene la habilidad de volar y se conoce que a veces atraviesa paredes.`,
+    strengthES: `Un Espectro nunca dejará pisadas rastreables en el suelo.`,
+    weaknessES: `Un Espectro tendrá una reacción tóxica en contacto con la Sal.`,
   },
   {
     type: 'ghost',
@@ -65,6 +82,10 @@ const cards = [
     descRU: `Фантом - призрак, способный вселяться в живых людей, обычно появляется из-за неосторожного использования Доски Уиджи. Вселяет страх в находящихся рядом с ним.`,
     strengthRU: `Один лишь вид Фантома заметно снижает уровень Рассудка.`,
     weaknessRU: `Если сфотографировать Фантома, он исчезнет на некоторое время.`,
+    nameES: `Ente`,
+    descES: `Un Ente es un Fantasma que puede poseer a los vivos, suele ser invocado mediante un Tablero de Ouija. También induce miedo en aquellas personas que lo rodean.`,
+    strengthES: `Mirar a un Ente hará que tu Cordura disminuya considerablemente.`,
+    weaknessES: `Fotografiar a un Ente hará que desaparezca temporalmente.`,
   },
   {
     type: 'ghost',
@@ -77,6 +98,10 @@ const cards = [
     descRU: `Один из самых известных призраков. Может шуметь и взаимодействовать с окружающими предметами, вселяя страх в своих жертв.`,
     strengthRU: `Полтергейст может швырять много предметов одновременно.`,
     weaknessRU: `Практически безоружен в пустой комнате.`,
+    nameES: `Poltergeist`,
+    descES: `Uno de los Fantasmas más famosos, el Poltergeist, también conocido por ser uno de los más ruidosos. Puede manipular los objetos que le rodean infundiendo así miedo en sus víctimas.`,
+    strengthES: `Un Poltergeist puede lanzar muchos objetos a la vez.`,
+    weaknessES: `Un Poltergeist es prácticamente inútil en una habitación vacía.`,
   },
   {
     type: 'ghost',
@@ -89,6 +114,10 @@ const cards = [
     descRU: `Банши - природный хищник и может атаковать кого угодно. Известно, что банши будет преследовать избранную жертву до тех пор, пока не убьёт.`,
     strengthRU: `Фокусируются на одном конкретном человеке.`,
     weaknessRU: `Боятся распятия и будут менее агрессивны, если оно оставлено поблизости.`,
+    nameES: `Banshee`,
+    descES: `La Banshee es una depredadora natural que atacará a cualquier cosa. Se conoce que acecha a sus presas y les mata de una en una.`,
+    strengthES: `La Banshee solo podrá marcar a un jugador a la vez.`,
+    weaknessES: `Las Banshees temen el Crucifijo haciendo que sean menos agresivas si se encuentran cerca de uno.`,
   },
   {
     type: 'ghost',
@@ -101,6 +130,10 @@ const cards = [
     descRU: `Джинн - призрак, охраняющий свою территорию и атакующий в случае опасности. Известно, что джинны могут перемещаться с высокой скоростью.`,
     strengthRU: `Джинн будет перемещаться быстрее, если жертва далеко.`,
     weaknessRU: `Если отключить электричество, Джинн не сможет использовать свои способности.`,
+    nameES: `Jinn`,
+    descES: `Un Jinn es un Fantasma territorial que atacará cuando se sienta amenazado. También son conocidos por moverse a gran velocidad.`,
+    strengthES: `Un Jinn viajará más rápido cuanto mayor sea la distancia entre él y su víctima.`,
+    weaknessES: `Cuando el cuadro eléctrivo esté apagado un Jinn no podrá usar su habilidad.`,
   },
   {
     type: 'ghost',
@@ -113,6 +146,10 @@ const cards = [
     descRU: `Мара - источник всех кошмарных сновидений и наиболее сильна в темноте.`,
     strengthRU: `Мара более агрессивна под покровом темноты.`,
     weaknessRU: `В освещённом помещении шанс быть атакованным Марой меньше.`,
+    nameES: `Pesadilla`,
+    descES: `Una Pesadilla es un Fantasma terrorífico, conocido por ser el culpable de todos los malos sueños, se puede así inferir que es muy poderoso en la oscuridad.`,
+    strengthES: `Una pesadilla tendrá más probabilidades de atacarte si te encuentras a oscuras.`,
+    weaknessES: `Encender las luces hará que una Pesadilla tenga menos probabilidades de atacarte.`,
   },
   {
     type: 'ghost',
@@ -125,6 +162,10 @@ const cards = [
     descRU: `Ревенант - медлительный, но жестокий призрак, который будет атаковать без разбору. Говорят, он двигается быстрее, когда выходит на охоту.`,
     strengthRU: `Ревенант будет передвигаться быстрее, преследуя жертву.`,
     weaknessRU: `Если спрятаться от Ревенанта, он снизит скорость передвижения.`,
+    nameES: `Revenant`,
+    descES: `Un Revenant es un Fantasma lento pero muy violento que atacará indiscriminadamente a cualquiera. Se rumorea que puede moverse a gran velocidad.`,
+    strengthES: `Un Revenant se desplaza más rápido si va tras su presa.`,
+    weaknessES: `Esconderte de un Revenant hará que se mueva muy lento.`,
   },
   {
     type: 'ghost',
@@ -137,6 +178,10 @@ const cards = [
     descRU: `Тень - застенчивый призрак. Похоже, что Тень прекращает любую деятельность, если рядом несколько человек.`,
     strengthRU: `Поскольку Тень застенчива, найти её будет нелегко.`,
     weaknessRU: `Тень не станет начинать охоту, если рядом сразу несколько человек.`,
+    nameES: `Sombra`,
+    descES: `Una Sombra es bien conocida por ser un Fantasma tímido. Existe la evidencia de que una Sombra no generará actividad paranormal si hay varias personas cerca.`,
+    strengthES: `Una Sombra es muy difícil de encontrar ya que es muy tímida.`,
+    weaknessES: `Una Sombra no atacará si varias personas se encuentran juntas.`,
   },
   {
     type: 'ghost',
@@ -149,6 +194,10 @@ const cards = [
     descRU: `Демон - один из самых жестоких призраков. Известно, что он склонен атаковать совершенно без причины.`,
     strengthRU: `Демон будет атаковать чаще остальных призраков.`,
     weaknessRU: `Если задавать Демону успешные вопросы через Доску Уиджи, ваш рассудок не будет снижаться.`,
+    nameES: `Demonio`,
+    descES: `Un Demonio es uno de los peores Fantasmas que te puedes encontrar. Son conocidos por atacar sin ninguna razón aparente.`,
+    strengthES: `Los Demonios atacarán de manera más frecuente que otros Fantasmas.`,
+    weaknessES: `Hacer preguntas con el Tablero de Ouija hará que la Cordura no disminuya.`,
   },
   {
     type: 'ghost',
@@ -161,6 +210,10 @@ const cards = [
     descRU: `Как правило, Юрэй возвращается в мир живых ради мести или из-за ненависти.`,
     strengthRU: `Юрэй влияет на ваш рассудок сильнее обычного.`,
     weaknessRU: `Если зажечь Благовоние в комнате с Юрэй, призрак не сможет перемещаться долгое время.`,
+    nameES: `Yurei`,
+    descES: `Un Yurei es un Fantasma que ha vuelto al plano físico, normalmente ansiando una venganza o lleno de odio.`,
+    strengthES: `Los Yureis tienen un gran impacto en la Cordura de los individiuos.`,
+    weaknessES: `Usar Varillas de Incienso en la habitación de un Yurei hará que no se paseé por ahí durante un gran periodo de tiempo.`,
   },
   {
     type: 'ghost',
@@ -173,6 +226,10 @@ const cards = [
     descRU: `Oни родственны Демону и невероятно сильны. Говорят, они становятся более активны, если жертва находится рядом.`,
     strengthRU: `Oни более активны в присутствии людей и могут перемещать предметы с высокой скоростью.`,
     weaknessRU: `Поскольку Oни очень активны, их легко обнаружить и распознать.`,
+    nameES: `Oni`,
+    descES: `Un Oni es un primo hermano de un Demonio y poseen una fuerza abrumadroa. Hay rumores de que se vuelven más activos alrededor de su presa.`,
+    strengthES: `Los Oni son más activos cuanta más gente haya alrededor de ellos y tienen la capacidad de lanzar objetos a grandes velocidades.`,
+    weaknessES: `Los Oni al ser más activos, son fáciles de encontrar e identificar.`,
   },
   {
     type: 'tool',
@@ -180,6 +237,8 @@ const cards = [
     desc: `This has always been one of the main ways to weaken the more common ghosts. To do this you will need to grab some Smudge Sticks and burn it near the Ghost.`,
     nameRU: `Благовоние`,
     descRU: `Благовоние с давних времен было основным способом ослабить большинство призраков. Возьмите несколько Благовоний и подожгите рядом с Призраком.`,
+    nameES: `Incienso`,
+    descES: `Esta ha sido durante siglos la manera convencional de calmar a un fanstasma. Enciende las Varillas de Incienso cerca del fantasma para debilitarlo.`,
   },
   {
     type: 'tool',
@@ -187,6 +246,8 @@ const cards = [
     desc: `The most common way of accidentally summoning a ghost is with a Ouija Board so you may come across these during your investigations. Be careful if you choose to use it as they have been known to lower your sanity. To use one, activate it and then ask a question with your voice.`,
     nameRU: `Доска Уиджи`,
     descRU: `Поскольку призраки часто возникают в результате неосторожного использования спиритической доски, вы наверняка найдёте Доску Уиджи во время расследования. Будьте осторожны, так как использование доски снижает ваш уровень Рассудка. Для использования активируйте и задавайте вопросы вслух.`,
+    nameES: `Tablero de Ouija`,
+    descES: `La manera tradicional de invocar un Fantasma por error es con el Tablero de Ouija que puedes encontrar durante tus investigaciones. Ten cuidado si eliges utilizarlo ya que disminuye considerablemente tu Cordura. Para usarla sólo debes activarla y hacer una pregunta.`,
   },
   {
     type: 'tool',
@@ -194,6 +255,8 @@ const cards = [
     desc: `Some Ghosts will leave EMF traces near them that will show up on an EMF Reader as level 5.`,
     nameRU: `Детектор ЭМП`,
     descRU: `Присутствие некоторых призраков вызывает электромагнитные колебания. Если призрак рядом, на датчике отобразится 5 уровень.`,
+    nameES: `EMF Nivel 5`,
+    descES: `Algunos Fantasmas dejan rastros de EMF allá por donde pasan lo que dará una señal de EMF Nivel 5 en el detector.`,
   },
   {
     type: 'tool',
@@ -201,6 +264,8 @@ const cards = [
     desc: `Only certain ghosts will talk through a Spirit Box when asked a question with your voice. Make sure the lights are off.`,
     nameRU: `Радиоприёмник`,
     descRU: `Лишь некоторые виды призраков будут отвечать на вопросы при помощи радиоприёмника. Не забудьте выключить свет.`,
+    nameES: `Spirit Box`,
+    descES: `Algunos Fantasmas se comunicarán contigo a través de la Spirit Box cuando formules una pregunta. Las luces deberán estar apagadas.`,
   },
   {
     type: 'tool',
@@ -208,6 +273,8 @@ const cards = [
     desc: `All ghosts make areas cold however some ghosts have been known to drop temperatures even further.`,
     nameRU: `Минусовая температура`,
     descRU: `Присутствие призраков всегда снижает температуру, но некоторые способны понижать температуру еще сильнее.`,
+    nameES: `Temperaturas bajo cero`,
+    descES: `Todos los Fantasmas hacen que disminuya la temperatura ambiente, sin embargo, algunos la disminuyen considerablemente más.`,
   },
   {
     type: 'tool',
@@ -215,6 +282,8 @@ const cards = [
     desc: `Some Ghosts have been known to leave fingerprints on doors, windows and light switches. This will show up with a UV Light.`,
     nameRU: `Отпечатки`,
     descRU: `Некоторые призраки оставляют отпечатки рук на дверях, окнах и выключателях. УФ-фонарик позволит это заметить.`,
+    nameES: `Huellas dactilares`,
+    descES: `Algunos Fantasmas dejan huellas en las puertas, ventanas e interruptores de luz al interactuar con ellos. Estas huellas se podrán ver con luz ultravioleta.`,
   },
   {
     type: 'tool',
@@ -222,6 +291,8 @@ const cards = [
     desc: `The classic paranormal evidence however not all ghosts have one. This will be visible on a camera.`,
     nameRU: `Призрачный огонёк`,
     descRU: `Классическое явление, напоминающее светлячка, но не все призраки проявляются таким образом. Огонёк виден на видеокамере.`,
+    nameES: `Orbes`,
+    descES: `Las clásica evidencia paranormal, aunque, algunos Fantasmas no generan estos Orbes. Serán visibles en una cámara de vídeo como un flash redondo y luminoso en movimiento.`,
   },
   {
     type: 'tool',
@@ -229,6 +300,8 @@ const cards = [
     desc: `Some Ghosts are able to write inside this book if placed nearby. Paranormal investigators started using pen and paper as an alternative form of communication to the Spirit Box. It was later discovered that only certain types of Ghosts will write.`,
     nameRU: `Блокнот`,
     descRU: `Исследователи паранормальных явлений начали использовать письмо на бумаге как альтернативный метод коммуникации с призраками. Но было обнаружено, что не все призраки будут общаться подобным способом.`,
+    nameES: `Libro de escritura fantasma`,
+    descES: `Algunos Fantasmas pueden escribir en este libro si se colocan cerca de ellos. Los investigadores comenzaron a usar boli y papel como una forma alternativa de comunicación a la Spirit Box. Más tarde se descubrió que sólo ciertos tipos de Fantasmas escriben.`,
   },
   {type: 'evidence'},
   {type: 'timer'},

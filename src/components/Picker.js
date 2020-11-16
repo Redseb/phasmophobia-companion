@@ -177,9 +177,9 @@ const Picker = ({
           <Text style={styles.header}>Possible Evidence Remaining:</Text>
           <Text style={styles.text}>
             {possibleEvidence.length >= 6
-              ? 'All'
+              ? labels.all
               : possibleEvidence.length == 0
-              ? 'None'
+              ? labels.none
               : possibleEvidenceText}
           </Text>
         </View>
