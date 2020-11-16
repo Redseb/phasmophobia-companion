@@ -124,7 +124,11 @@ const App = () => {
           removeClippedSubviews={true}
           firstItem={1}
         />
-        <BottomBar activeIndex={activeIndex} carouselRef={carouselRef} />
+        <BottomBar
+          activeIndex={activeIndex}
+          carouselRef={carouselRef}
+          language={language}
+        />
       </View>
     </>
   );

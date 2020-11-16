@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -7,19 +7,21 @@ import {
   Dimensions,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { snapToItem } from 'react-native-snap-carousel';
-const { width, height } = Dimensions.get('screen');
+import {snapToItem} from 'react-native-snap-carousel';
+import {labelSwitch} from '../util/translationSwitch';
+const {width, height} = Dimensions.get('screen');
 
 const INTRO_INDEX = 1;
 const GHOST_INDEX = 5;
 const TOOLS_INDEX = 17;
 const EVIDENCE_INDEX = 25;
 
-const BottomBar = ({ carouselRef, activeIndex }) => {
+const BottomBar = ({carouselRef, activeIndex, language}) => {
+  const labels = labelSwitch(language);
   const [currSection, setCurrSection] = useState(0);
   useEffect(() => {
     if (
-      carouselRef.current.currentIndex >= INTRO_INDEX &&
+      carouselRef.current.currentIndex >= 0 &&
       carouselRef.current.currentIndex < GHOST_INDEX
     ) {
       setCurrSection(1);
@@ -59,7 +61,7 @@ const BottomBar = ({ carouselRef, activeIndex }) => {
             ...styles.iconFooter,
             color: currSection == 1 ? '#DCD289' : 'white',
           }}>
-          Introduction
+          {labels.introduction}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -81,7 +83,7 @@ const BottomBar = ({ carouselRef, activeIndex }) => {
             ...styles.iconFooter,
             color: currSection == 2 ? '#DCD289' : 'white',
           }}>
-          Ghosts
+          {labels.ghosts}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -103,7 +105,7 @@ const BottomBar = ({ carouselRef, activeIndex }) => {
             ...styles.iconFooter,
             color: currSection == 3 ? '#DCD289' : 'white',
           }}>
-          Tools
+          {labels.tools}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -125,7 +127,7 @@ const BottomBar = ({ carouselRef, activeIndex }) => {
             ...styles.iconFooter,
             color: currSection == 4 ? '#DCD289' : 'white',
           }}>
-          Evidence
+          {labels.evidence}
         </Text>
       </TouchableOpacity>
     </View>
