@@ -12,6 +12,10 @@ const introCardSwitch = (item, language) => {
       card.name = item.nameES;
       card.desc = item.descES;
       return card;
+    case 'fr':
+      card.name = item.nameFR;
+      card.desc = item.descFR;
+      return card;
   }
   return card;
 };
@@ -39,6 +43,13 @@ const ghostCardSwitch = (item, language) => {
       card.weakness = item.weaknessES;
       card.evidence = item.evidence;
       return card;
+    case 'fr':
+      card.name = item.nameFR;
+      card.desc = item.descFR;
+      card.strength = item.strengthFR;
+      card.weakness = item.weaknessFR;
+      card.evidence = item.evidence;
+      return card;
   }
   return card;
 };
@@ -57,6 +68,10 @@ const toolCardSwitch = (item, language) => {
       card.name = item.nameES;
       card.desc = item.descES;
       return card;
+    case 'fr':
+      card.name = item.nameFR;
+      card.desc = item.descFR;
+      return card;
   }
   return card;
 };
@@ -67,6 +82,8 @@ const labelSwitch = (language) => {
       return labelsRU;
     case 'es':
       return labelsES;
+    case 'fr':
+      return labelsFR;
     default:
       return labelsEN;
   }
@@ -124,7 +141,7 @@ const labelsRU = {
   introduction: 'Введение',
   ghosts: 'Призраки',
   tools: 'Инструменты',
-  evidence: 'Улики',
+  evidence: 'Улика',
   noEvidence: 'Не найдено',
   emf5: 'ЭМП ур. 5',
   spiritBox: 'Радиоприёмник',
@@ -139,7 +156,7 @@ const labelsRU = {
   all: 'Все',
   reset: 'Сброс',
   timer: 'Таймер',
-  timerFinished: 'Таймер закончился, призрак может начать преследовать',
+  timerFinished: 'Время истекло, призрак может начать охоту',
   resetTimer: 'Нажмите для сброса и настройки времени',
   start: 'Старт',
   pause: 'Пауза',
@@ -151,7 +168,7 @@ const labelsRU = {
   resetTimerWhenYouLeave: 'Сбросьте таймер на выходе из фургона!',
   uniqueStrengths: 'Уникальные сильные стороны: ',
   uniqueWeaknesses: 'Уникальные недостатки: ',
-  settings: 'настройки',
+  settings: 'Настройки',
   spirit: 'Дух',
   wraith: 'Мираж',
   phantom: 'Фантом',
@@ -163,9 +180,9 @@ const labelsRU = {
   shade: 'Тень',
   demon: 'Демон',
   yurei: 'Юрэй',
-  oni: 'Oни',
+  oni: 'Óни',
   review: 'Оставьте отзыв!',
-  none: 'никто',
+  none: 'Нет',
 };
 
 const labelsES = {
@@ -218,10 +235,58 @@ const labelsES = {
   none: 'Ninguna',
 };
 
+const labelsFR = {
+  introduction: 'Introduction',
+  ghosts: 'Fantômes',
+  tools: 'Outils',
+  evidence: 'Évidences',
+  noEvidence: 'Aucune évidence',
+  emf5: 'EMF niveau 5',
+  spiritBox: 'Spirit Box',
+  fingerprints: 'Empreintes',
+  ghostOrb: 'Orbe fantomatique',
+  ghostWriting: 'Écriture du fantôme',
+  freezingTemp: 'Température glaciale',
+  evidenceAbove:
+    'En utlisant toutes les évidences, je peux en déduire que le type du fantôme est:',
+  notYedDiscovered: 'Pas encore découvert',
+  evidenceRemaining: 'Évidences possibles restantes',
+  all: 'Tout',
+  reset: 'Redémarrer',
+  timer: 'Temps',
+  timerFinished: `Le temps est fini, l'esprit devrai commencer à chasser`,
+  resetTimer: 'Clique sur le temps pour redémarrer',
+  start: 'Lancer',
+  pause: 'Pause',
+  investigationDifficultyToTime: `Chaque difficulté d'investigation a un différent temps  avant que l'esprit attaque:`,
+  amateur: 'Amateur',
+  intermediate: 'Intermédiaire',
+  professional: 'Professionnel',
+  resetTimerWhenYouLeave: 'Redémarre le temps quand tu quitte le van!',
+  uniqueStrengths: 'Points forts: ',
+  uniqueWeaknesses: 'Points faibles: ',
+  settings: 'Paramètres',
+  spirit: 'Esprit',
+  wraith: 'Spectre',
+  phantom: 'Fantôme',
+  poltergeist: 'Poltergeist',
+  banshee: 'Banshee',
+  jinn: 'Djinn',
+  mare: 'Cauchemar',
+  revenant: 'Revenant',
+  shade: 'Ombre',
+  demon: 'Démon',
+  yurei: 'Yurei',
+  oni: 'Oni',
+  review: 'Laisse un commentaire!',
+  none: 'Aucun',
+};
+
 const LANGUAGES = [
   {key: 'en', name: 'English'},
   {key: 'ru', name: 'Russian'},
   {key: 'es', name: 'Spanish'},
+  {key: 'fr', name: 'French'},
 ];
 
 export {

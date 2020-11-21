@@ -174,7 +174,7 @@ const Picker = ({
           </TouchableOpacity>
         </View>
         <View style={styles.evidenceRemainingContainer}>
-          <Text style={styles.header}>Possible Evidence Remaining:</Text>
+          <Text style={styles.header}>{labels.evidenceRemaining}:</Text>
           <Text style={styles.text}>
             {possibleEvidence.length >= 6
               ? labels.all
