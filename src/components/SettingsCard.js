@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {storeData, getData, LANGUAGE_KEY} from '../util/dataStorage';
 import {labelSwitch, LANGUAGES} from '../util/translationSwitch';
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
 import Picker from '../components/Picker';
 const SettingsCard = ({
   language,
@@ -42,7 +42,7 @@ const BORDERWIDTH = height / 200;
 const styles = StyleSheet.create({
   container: {
     width: width / 1.2,
-    height: height / 1.25,
+    height: height / 1.15,
     display: 'flex',
     alignSelf: 'center',
     justifyContent: 'space-evenly',
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   imgBG: {
     ...StyleSheet.absoluteFillObject,
-    height: height / 1.25 - BORDERWIDTH * 2,
+    height: height / 1.15 - BORDERWIDTH * 2,
     width: width / 1.2 - BORDERWIDTH * 2,
     borderRadius: 10,
     opacity: 0.5,
@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
     fontFamily: 'ShadowsIntoLight',
   },
   commonText: {
-    fontSize: height / 40,
+    // fontSize: height / 40,
+    fontSize: 20,
     textAlign: 'center',
     fontFamily: 'Ubuntu',
   },

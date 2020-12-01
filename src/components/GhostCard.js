@@ -3,7 +3,8 @@ import React, {useEffect} from 'react';
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {labelSwitch} from '../util/translationSwitch';
 
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
+console.log(height);
 
 const GhostCard = ({name, desc, strength, weakness, evidence, language}) => {
   evidence = evidence.split(/, /);
@@ -67,7 +68,7 @@ const BORDERWIDTH = height / 200;
 const styles = StyleSheet.create({
   container: {
     width: width / 1.2,
-    height: height / 1.25,
+    height: height / 1.15,
     display: 'flex',
     alignSelf: 'center',
     justifyContent: 'space-around',
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
   },
   imgBG: {
     ...StyleSheet.absoluteFillObject,
-    height: height / 1.25 - BORDERWIDTH * 2,
+    height: height / 1.15 - BORDERWIDTH * 2,
     width: width / 1.2 - BORDERWIDTH * 2,
     borderRadius: 10,
     opacity: 0.5,
@@ -90,7 +91,9 @@ const styles = StyleSheet.create({
     fontFamily: 'ShadowsIntoLight',
   },
   commonText: {
-    fontSize: height / 40,
+    // fontSize: height / 55,
+    // fontSize: 16,
+    fontSize: 20,
     textAlign: 'center',
     fontFamily: 'Ubuntu',
   },

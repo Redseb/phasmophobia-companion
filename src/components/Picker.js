@@ -9,7 +9,7 @@ import {
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {storeData, getData, LANGUAGE_KEY} from '../util/dataStorage';
 import {LANGUAGES, labelSwitch} from '../util/translationSwitch';
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
 
 // const LANGUAGES = {en: {name: 'English', key: 'en'}, ru: {name: 'Russian', key: 'ru'}};
 
@@ -247,7 +247,8 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: 'center',
-    fontSize: height / 50,
+    // fontSize: height / 50,
+    fontSize: 16,
     textAlign: 'center',
     fontFamily: 'Ubuntu',
   },

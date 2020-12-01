@@ -9,7 +9,7 @@ import {
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {snapToItem} from 'react-native-snap-carousel';
 import {labelSwitch} from '../util/translationSwitch';
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
 
 const INTRO_INDEX = 1;
 const GHOST_INDEX = 5;

@@ -39,7 +39,7 @@ import {
   LANGUAGES,
 } from './src/util/translationSwitch';
 
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
 
 const renderCard = (
   item,
