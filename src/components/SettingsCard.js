@@ -31,7 +31,7 @@ const SettingsCard = ({
       <Text style={styles.commonText}>{labels.review}</Text>
       <Text style={styles.smallText}>
         Translation Credit: Mikołaj Zyzański, StrongPlog, Narva, Delmas-Mons
-        Bastien
+        Bastien, Shade and Pelly
       </Text>
     </View>
   );

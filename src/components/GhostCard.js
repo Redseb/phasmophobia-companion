@@ -4,7 +4,6 @@ import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {labelSwitch} from '../util/translationSwitch';
 
 const {width, height} = Dimensions.get('window');
-console.log(height);
 
 const GhostCard = ({name, desc, strength, weakness, evidence, language}) => {
   evidence = evidence.split(/, /);

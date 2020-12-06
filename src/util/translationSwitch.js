@@ -16,6 +16,10 @@ const introCardSwitch = (item, language) => {
       card.name = item.nameFR;
       card.desc = item.descFR;
       return card;
+    case 'it':
+      card.name = item.nameIT;
+      card.desc = item.descIT;
+      return card;
   }
   return card;
 };
@@ -50,6 +54,13 @@ const ghostCardSwitch = (item, language) => {
       card.weakness = item.weaknessFR;
       card.evidence = item.evidence;
       return card;
+    case 'it':
+      card.name = item.nameIT;
+      card.desc = item.descIT;
+      card.strength = item.strengthIT;
+      card.weakness = item.weaknessIT;
+      card.evidence = item.evidence;
+      return card;
   }
   return card;
 };
@@ -72,6 +83,10 @@ const toolCardSwitch = (item, language) => {
       card.name = item.nameFR;
       card.desc = item.descFR;
       return card;
+    case 'it':
+      card.name = item.nameIT;
+      card.desc = item.descIT;
+      return card;
   }
   return card;
 };
@@ -84,6 +99,8 @@ const labelSwitch = (language) => {
       return labelsES;
     case 'fr':
       return labelsFR;
+    case 'it':
+      return labelsIT;
     default:
       return labelsEN;
   }
@@ -282,11 +299,59 @@ const labelsFR = {
   none: 'Aucun',
 };
 
+const labelsIT = {
+  introduction: 'Introduzione',
+  ghosts: 'Fantasmi',
+  tools: 'Utensili',
+  evidence: 'Prove',
+  noEvidence: 'Nessuna Prova',
+  emf5: 'EMF Livello 5',
+  spiritBox: 'Spirit Box',
+  fingerprints: 'Impronte Digitali',
+  ghostOrb: 'Sfera di Luce',
+  ghostWriting: 'Libro Spiritico',
+  freezingTemp: 'Temperatura di Congelamento',
+  evidenceAbove: 'Tipo di Fantasma:',
+  notYedDiscovered: 'Non Ancora Scoperto',
+  evidenceRemaining: 'Possibili Prove Rimanenti',
+  all: 'Tutti',
+  reset: 'Reset',
+  timer: 'Timer',
+  timerFinished: `Il timer è finito, il fantasma può iniziare la caccia`,
+  resetTimer:
+    'Toccare il timer per reimpostare e attivare o disattivare il tempo rimanente',
+  start: 'Start',
+  pause: 'Pausa',
+  investigationDifficultyToTime: `Ogni livello di difficoltà ha un diverso periodo di tempo prima che il Fantasma inizi a cacciare:`,
+  amateur: 'Dilettante',
+  intermediate: 'Intermedio',
+  professional: 'Professionale',
+  resetTimerWhenYouLeave: 'Reimposta il timer quando lasci il furgone!',
+  uniqueStrengths: 'Punti di Forza: ',
+  uniqueWeaknesses: 'Punti Deboli: ',
+  settings: 'Impostazioni',
+  spirit: 'Spirito',
+  wraith: 'Spettro',
+  phantom: 'Phantom',
+  poltergeist: 'Poltergeist',
+  banshee: 'Banshee',
+  jinn: 'Jinn',
+  mare: 'Mare',
+  revenant: 'Revenant',
+  shade: 'Ombra',
+  demon: 'Demone',
+  yurei: 'Yurei',
+  oni: 'Oni',
+  review: 'Lascia una recensione!',
+  none: 'Nessuno',
+};
+
 const LANGUAGES = [
   {key: 'en', name: 'English'},
   {key: 'ru', name: 'Russian'},
   {key: 'es', name: 'Spanish'},
   {key: 'fr', name: 'French'},
+  {key: 'it', name: 'Italian'},
 ];
 
 export {
