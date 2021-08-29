@@ -44,59 +44,59 @@ const Picker = ({
     },
     {
       name: labels.spirit,
-      evidence: [2, 3, 5],
+      evidence: [1, 5, 2],
     },
     {
       name: labels.wraith,
-      evidence: [3, 6, 2],
+      evidence: [1, 2, 7],
     },
     {
       name: labels.phantom,
-      evidence: [1, 4, 6],
+      evidence: [2, 3, 7],
     },
     {
       name: labels.poltergeist,
-      evidence: [2, 3, 4],
+      evidence: [5, 2, 3],
     },
     {
       name: labels.banshee,
-      evidence: [1, 3, 6],
+      evidence: [4, 3, 7],
     },
     {
       name: labels.jinn,
-      evidence: [2, 4, 1],
+      evidence: [1, 6, 3],
     },
     {
       name: labels.mare,
-      evidence: [2, 4, 6],
+      evidence: [4, 5, 2],
     },
     {
       name: labels.revenant,
-      evidence: [1, 3, 5],
-    },
-    {
-      name: labels.shade,
-      evidence: [1, 4, 5],
-    },
-    {
-      name: labels.demon,
-      evidence: [2, 5, 6],
-    },
-    {
-      name: labels.yurei,
       evidence: [4, 5, 6],
     },
     {
+      name: labels.shade,
+      evidence: [1, 5, 6],
+    },
+    {
+      name: labels.demon,
+      evidence: [6, 5, 3],
+    },
+    {
+      name: labels.yurei,
+      evidence: [4, 6, 7],
+    },
+    {
       name: labels.oni,
-      evidence: [1, 2, 5],
+      evidence: [1, 6, 7],
     },
     {
       name: labels.hantu,
-      evidence: [3, 4, 5],
+      evidence: [3, 4, 6],
     },
     {
       name: labels.yokai,
-      evidence: [2, 4, 5],
+      evidence: [4, 2, 7],
     },
     {
       name: labels.goryo,
