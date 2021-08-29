@@ -150,6 +150,11 @@ const labelsEN = {
   demon: 'Demon',
   yurei: 'Yurei',
   oni: 'Oni',
+  hantu: 'Hantu',
+  yokai: 'Yokai',
+  goryo: 'Goryo',
+  myling: 'Myling',
+  dotsProjector: 'DOTS Projector',
   review: 'Leave a review!',
   none: 'None',
 };
@@ -198,6 +203,8 @@ const labelsRU = {
   demon: 'Демон',
   yurei: 'Юрэй',
   oni: 'Óни',
+  hantu: 'Ханту',
+  yokai: 'ёкай',
   review: 'Оставьте отзыв!',
   none: 'Нет',
 };
@@ -248,6 +255,11 @@ const labelsES = {
   demon: 'Demonio',
   yurei: 'Yurei',
   oni: 'Oni',
+  hantu: 'Hantu',
+  yokai: 'Yokai',
+  goryo: 'Goryo',
+  myling: 'Myling',
+  dotsProjector: 'DOTS Projector',
   review: '¡Deja una reseña!',
   none: 'Ninguna',
 };
@@ -295,6 +307,11 @@ const labelsFR = {
   demon: 'Démon',
   yurei: 'Yurei',
   oni: 'Oni',
+  hantu: 'Hantu',
+  yokai: 'Yokai',
+  goryo: 'Goryo',
+  myling: 'Myling',
+  dotsProjector: 'DOTS Projector',
   review: 'Laisse un commentaire!',
   none: 'Aucun',
 };
@@ -342,16 +359,21 @@ const labelsIT = {
   demon: 'Demone',
   yurei: 'Yurei',
   oni: 'Oni',
+  hantu: 'Hantu',
+  yokai: 'Yokai',
+  goryo: 'Goryo',
+  myling: 'Myling',
+  dotsProjector: 'DOTS Projector',
   review: 'Lascia una recensione!',
   none: 'Nessuno',
 };
 
 const LANGUAGES = [
-  {key: 'en', name: 'English'},
-  {key: 'ru', name: 'Russian'},
-  {key: 'es', name: 'Spanish'},
-  {key: 'fr', name: 'French'},
-  {key: 'it', name: 'Italian'},
+  { key: 'en', name: 'English' },
+  { key: 'ru', name: 'Russian' },
+  { key: 'es', name: 'Spanish' },
+  { key: 'fr', name: 'French' },
+  { key: 'it', name: 'Italian' },
 ];
 
 export {

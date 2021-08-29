@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,9 +7,9 @@ import {
   Dimensions,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {storeData, getData, LANGUAGE_KEY} from '../util/dataStorage';
-import {LANGUAGES, labelSwitch} from '../util/translationSwitch';
-const {width, height} = Dimensions.get('window');
+import { storeData, getData, LANGUAGE_KEY } from '../util/dataStorage';
+import { LANGUAGES, labelSwitch } from '../util/translationSwitch';
+const { width, height } = Dimensions.get('window');
 
 // const LANGUAGES = {en: {name: 'English', key: 'en'}, ru: {name: 'Russian', key: 'ru'}};
 
@@ -32,6 +32,7 @@ const Picker = ({
     labels.ghostOrb, //4
     labels.ghostWriting, //5
     labels.freezingTemp, //6
+    labels.dotsProjector //7
   ];
 
   // Ghost: name: <String>, evidence:[integer, integer, integer]
@@ -89,13 +90,29 @@ const Picker = ({
       name: labels.oni,
       evidence: [1, 2, 5],
     },
+    {
+      name: labels.hantu,
+      evidence: [3, 4, 5],
+    },
+    {
+      name: labels.yokai,
+      evidence: [2, 4, 5],
+    },
+    {
+      name: labels.goryo,
+      evidence: [1, 3, 7]
+    },
+    {
+      name: labels.myling,
+      evidence: [1, 3, 5]
+    }
   ];
 
   if (type == 'evidence') {
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          style={{width: width / 8, alignItems: 'flex-start'}}
+          style={{ width: width / 8, alignItems: 'flex-start' }}
           onPress={() => {
             setGhost(0);
             setEvidence(evidence == 0 ? evidenceList.length - 1 : evidence - 1);
@@ -103,7 +120,7 @@ const Picker = ({
           <FontAwesome5 name="angle-left" size={width / 8} />
         </TouchableOpacity>
         <Text style={styles.pickerText}>{evidenceList[evidence]}</Text>
-        <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
+        <TouchableOpacity style={{ width: width / 8, alignItems: 'flex-end' }}>
           <FontAwesome5
             name="angle-right"
             size={width / 8}
@@ -150,7 +167,7 @@ const Picker = ({
       <>
         <View style={styles.container}>
           <TouchableOpacity
-            style={{width: width / 8, alignItems: 'flex-start'}}
+            style={{ width: width / 8, alignItems: 'flex-start' }}
             onPress={() => {
               setEvidence(
                 evidence == 0 ? ghostPickerList.length - 1 : evidence - 1,
@@ -163,7 +180,7 @@ const Picker = ({
               ? ghostPickerList[0].name
               : ghostPickerList[evidence].name}
           </Text>
-          <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
+          <TouchableOpacity style={{ width: width / 8, alignItems: 'flex-end' }}>
             <FontAwesome5
               name="angle-right"
               size={width / 8}
@@ -179,8 +196,8 @@ const Picker = ({
             {possibleEvidence.length >= 6
               ? labels.all
               : possibleEvidence.length == 0
-              ? labels.none
-              : possibleEvidenceText}
+                ? labels.none
+                : possibleEvidenceText}
           </Text>
         </View>
       </>
@@ -189,7 +206,7 @@ const Picker = ({
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          style={{width: width / 8, alignItems: 'flex-start'}}
+          style={{ width: width / 8, alignItems: 'flex-start' }}
           onPress={() => {
             const newIndex =
               evidence == 0 ? LANGUAGES.length - 1 : evidence - 1;
@@ -200,7 +217,7 @@ const Picker = ({
           <FontAwesome5 name="angle-left" size={width / 8} />
         </TouchableOpacity>
         <Text style={styles.pickerText}>{LANGUAGES[evidence].name}</Text>
-        <TouchableOpacity style={{width: width / 8, alignItems: 'flex-end'}}>
+        <TouchableOpacity style={{ width: width / 8, alignItems: 'flex-end' }}>
           <FontAwesome5
             name="angle-right"
             size={width / 8}

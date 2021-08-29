@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -7,16 +7,16 @@ import {
   Dimensions,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {snapToItem} from 'react-native-snap-carousel';
-import {labelSwitch} from '../util/translationSwitch';
-const {width, height} = Dimensions.get('window');
+import { snapToItem } from 'react-native-snap-carousel';
+import { labelSwitch } from '../util/translationSwitch';
+const { width, height } = Dimensions.get('window');
 
 const INTRO_INDEX = 1;
 const GHOST_INDEX = 5;
-const TOOLS_INDEX = 17;
-const EVIDENCE_INDEX = 25;
+const TOOLS_INDEX = 21;
+const EVIDENCE_INDEX = 30;
 
-const BottomBar = ({carouselRef, activeIndex, language}) => {
+const BottomBar = ({ carouselRef, activeIndex, language }) => {
   const labels = labelSwitch(language);
   const [currSection, setCurrSection] = useState(0);
   useEffect(() => {
