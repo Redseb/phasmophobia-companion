@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
-import {labelSwitch} from '../util/translationSwitch';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { labelSwitch } from '../util/translationSwitch';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
-const GhostCard = ({name, desc, strength, weakness, evidence, language}) => {
+const GhostCard = ({ name, desc, strength, weakness, evidence, language }) => {
   evidence = evidence.split(/, /);
   let labels = labelSwitch(language);
   let translatedEvidence = [];
@@ -28,6 +28,9 @@ const GhostCard = ({name, desc, strength, weakness, evidence, language}) => {
         break;
       case 'Freezing Temperatures':
         translatedEvidence.push(labels.freezingTemp);
+        break;
+      case 'DOTS Projector':
+        translatedEvidence.push(labels.dotsProjector);
         break;
     }
   });

@@ -13,8 +13,8 @@ const { width, height } = Dimensions.get('window');
 
 const INTRO_INDEX = 1;
 const GHOST_INDEX = 5;
-const TOOLS_INDEX = 21;
-const EVIDENCE_INDEX = 30;
+const TOOLS_INDEX = 25;
+const EVIDENCE_INDEX = 34;
 
 const BottomBar = ({ carouselRef, activeIndex, language }) => {
   const labels = labelSwitch(language);

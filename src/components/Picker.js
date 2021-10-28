@@ -105,6 +105,22 @@ const Picker = ({
     {
       name: labels.myling,
       evidence: [1, 3, 5]
+    },
+    {
+      name: labels.onryo,
+      evidence: [2, 4, 6]
+    },
+    {
+      name: labels.obake,
+      evidence: [1, 3, 4]
+    },
+    {
+      name: labels.theTwins,
+      evidence: [1, 2, 6]
+    },
+    {
+      name: labels.raiju,
+      evidence: [1, 4, 7]
     }
   ];
 
